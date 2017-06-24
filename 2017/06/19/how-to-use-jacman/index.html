@@ -12,7 +12,7 @@
 
     
     <meta name="description" content="Jacman 是一款扁平化，有着响应式设计的 Jekyll 主题。本站正式使用了 Jacman 主题。Jacman 基于 Jacman 的 Hexo 主题修改而来。你可以前往本站和 Demo 预览更多关于本主题的更多效果。如果你有任何问题或意见欢迎到 GitHub 发表 issue。">
-<meta name="keywords" content="Jekyll,Jacman">
+<meta name="keywords" content="Hexo,Jekyll,Jacman">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何使用 Jacman 主题">
 <meta property="og:url" content="http://www.baicharming.com/2017/06/19/how-to-use-jacman/index.html">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/81b78497jw1emegd6b0ytj209204pweu.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/81b78497jw1emgscr3575j2078050jrc.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/81b78497jw1emf4v6qf91j20kf07sq8v.jpg">
-<meta property="og:updated_time" content="2017-06-19T13:00:31.099Z">
+<meta property="og:updated_time" content="2017-06-24T07:34:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何使用 Jacman 主题">
 <meta name="twitter:description" content="Jacman 是一款扁平化，有着响应式设计的 Jekyll 主题。本站正式使用了 Jacman 主题。Jacman 基于 Jacman 的 Hexo 主题修改而来。你可以前往本站和 Demo 预览更多关于本主题的更多效果。如果你有任何问题或意见欢迎到 GitHub 发表 issue。">
@@ -102,7 +102,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主题介绍"><span class="toc-number">1.</span> <span class="toc-text">主题介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置指南"><span class="toc-number">2.</span> <span class="toc-text">配置指南</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性功能"><span class="toc-number">2.1.</span> <span class="toc-text">属性功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-number">3.</span> <span class="toc-text">常见问题</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主题介绍"><span class="toc-number">1.</span> <span class="toc-text">主题介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置指南"><span class="toc-number">2.</span> <span class="toc-text">配置指南</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性功能"><span class="toc-number">3.</span> <span class="toc-text">属性功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-number">4.</span> <span class="toc-text">常见问题</span></a></li></ol>
 		
 		</div>
 		
@@ -110,7 +110,7 @@
 <a id="more"></a>
 <h2 id="配置指南"><a href="#配置指南" class="headerlink" title="配置指南"></a>配置指南</h2><p>Jacman 主题提供了丰富的配置属性，可以实现您对主题的自定义。配置文件<code>_config.yml</code>位于主题根目录下。本次更新对配置文件进行了较大调整，如您之前就使用了 Jacman，也需要您根据以下指南进行相应的修改。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div></pre></td><td class="code"><pre><div class="line">##### 菜单</div><div class="line">menu:</div><div class="line">  主页: /</div><div class="line">  归档: /archives</div><div class="line">  关于: /about</div><div class="line"></div><div class="line">#### 控件</div><div class="line">widgets: </div><div class="line">- category</div><div class="line">- tag</div><div class="line">- links</div><div class="line">- rss</div><div class="line"></div><div class="line">#### RSS </div><div class="line">rss: /atom.xml </div><div class="line"></div><div class="line">#### 图片相关</div><div class="line">imglogo:</div><div class="line">  enable: true               ## 是否显示网站 logo</div><div class="line">  src: img/logo.png        </div><div class="line">favicon: img/favicon.ico     ## 网站图标    </div><div class="line">apple_icon: img/jacman.jpg   ## 苹果设备上的图标，背景不要透明</div><div class="line">author_img: img/author.jpg   ## 网站底部的博主头像</div><div class="line">banner_img: img/banner.jpg   ## 博客顶部的图片</div><div class="line"></div><div class="line">close_aside: false      ##是否在文章页面自动关闭侧边栏</div><div class="line"></div><div class="line">#### 首页相关</div><div class="line">index:</div><div class="line">  expand: true              ## 首页文章是否展开。默认为展开式，显示 Read More。</div><div class="line">  excerpt_link: Read More    </div><div class="line"></div><div class="line">#### 作者信息</div><div class="line">author:</div><div class="line">  name: ## 作者名</div><div class="line">  intro_line1:  &quot;Hello ,I&apos;m Larry Page in Google.&quot;    ## 网站底部的个人介绍</div><div class="line">  intro_line2:  &quot;This is my blog,believe it or not.&quot;  </div><div class="line">  weibo_verifier:  ## 微博秀的验证码</div><div class="line">  tsina:           ## 用于微博秀和微博分享</div><div class="line">  weibo:           ## 用于显示网站底部社交按钮，下同</div><div class="line">  douban:         </div><div class="line">  zhihu:  </div><div class="line">  email:     </div><div class="line">  twitter:   </div><div class="line">  github:     </div><div class="line">  facebook: </div><div class="line">  linkedin:   </div><div class="line">  google_plus:   </div><div class="line">  stackoverflow:  </div><div class="line"></div><div class="line"></div><div class="line">#### 目录</div><div class="line">toc:</div><div class="line">  article: true   ## 是否在文章中显示目录</div><div class="line">  aside: true     ## 是否在侧边栏显示目录</div><div class="line"></div><div class="line">#### 友情链接</div><div class="line">links:</div><div class="line">  码农圈: https://coderq.com,一个面向程序员交流分享的新一代社区</div><div class="line">  Jark&apos;s Blog: http://wuchong.me</div><div class="line">  </div><div class="line">#### 评论</div><div class="line">duoshuo_shortname: </div><div class="line">disqus_shortname:  </div><div class="line"></div><div class="line">#### 分享按钮</div><div class="line">jiathis:</div><div class="line">  enable: false   ## 默认使用主题内建分享</div><div class="line">  id:    </div><div class="line">  tsina: </div><div class="line">  </div><div class="line">#### 网站统计</div><div class="line">google_analytics:</div><div class="line">  enable: false</div><div class="line">  id:            ## google analytics ID.</div><div class="line">  site:          ## 网站地址.</div><div class="line">baidu_tongji:</div><div class="line">  enable: false</div><div class="line">  sitecode:      ## 百度统计站点特征码</div><div class="line">cnzz_tongji:</div><div class="line">  enable: false</div><div class="line">  siteid:        ## CNZZ统计站点ID</div><div class="line"></div><div class="line">#### 杂项</div><div class="line">ShowCustomFont: true  </div><div class="line">fancybox: true        </div><div class="line">totop: true           </div><div class="line"></div><div class="line">#### 自定义搜索</div><div class="line">google_cse: </div><div class="line">  enable: false</div><div class="line">  cx:  </div><div class="line">baidu_search:    </div><div class="line">  enable: false</div><div class="line">  id:   </div><div class="line">  site: http://zhannei.baidu.com/cse/search </div><div class="line">tinysou_search:     ## http://tinysou.com/</div><div class="line">  enable: false</div><div class="line">  id: &quot;4ac092ad8d749fdc6293&quot;</div></pre></td></tr></table></figure>
-<h3 id="属性功能"><a href="#属性功能" class="headerlink" title="属性功能"></a>属性功能</h3><ul>
+<h2 id="属性功能"><a href="#属性功能" class="headerlink" title="属性功能"></a>属性功能</h2><ul>
 <li><strong>菜单 menu</strong><br>默认没有启用 <code>/tags</code> 和 <code>/categories</code>页面，如果需要启用请在博客目录下分别建立<code>tags</code> 和 <code>categories</code>文件夹每个文件夹中分别包含一个<code>index.md</code>文件。内容为：</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">layout: tags (或categories)</div><div class="line">title: tags (或categories)</div><div class="line">---</div></pre></td></tr></table></figure>
@@ -118,9 +118,12 @@
 <ul>
 <li><p><strong>控件 widgets</strong><br>提供了7种小工具。包括标签、分类、RSS、友情链接、微博秀。</p>
 <p><strong>友情链接</strong>：友情链接的网址添加可以在<code>links</code>属性下添加。</p>
-<p><strong>微博秀</strong>：需要注意的是，如果要启用微博秀，您必须填上<code>author</code>属性下<code>tsina</code>和<code>weibo_verifier</code>的值，前者是您微博ID，后者是您微博秀的验证码，访问 <a href="http://app.weibo.com/tool/weiboshow" target="_blank" rel="external">http://app.weibo.com/tool/weiboshow</a> 在如下图位置，可以获得您的 verifier，如：我的是<code>b3593ceb</code>。<br><img src="http://ww1.sinaimg.cn/large/81b78497jw1emegd6b0ytj209204pweu.jpg" alt=""></p>
-<p>如果要关闭侧边栏，将<code>close_aside</code>置为<code>true</code>，就会在博文页面自动关闭侧边栏。</p>
+<p><strong>微博秀</strong>：需要注意的是，如果要启用微博秀，您必须填上<code>author</code>属性下<code>tsina</code>和<code>weibo_verifier</code>的值，前者是您微博ID，后者是您微博秀的验证码，访问 <a href="http://app.weibo.com/tool/weiboshow" target="_blank" rel="external">http://app.weibo.com/tool/weiboshow</a> 在如下图位置，可以获得您的 verifier，如：我的是<code>b3593ceb</code>。</p>
 </li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/81b78497jw1emegd6b0ytj209204pweu.jpg" alt=""></p>
+<p> 如果要关闭侧边栏，将<code>close_aside</code>置为<code>true</code>，就会在博文页面自动关闭侧边栏。</p>
+<ul>
 <li><p><strong>图片相关 Image</strong><br>本主题可以设置网站相关图片，例如网站图标（<code>favicon</code>）、网站logo（<code>imglogo</code>）、作者头像（<code>author_img</code>）。建议启用网站logo，格式建议为<code>.svg</code>或<code>.png</code>格式。同时建议提供配套的 favicon 以及在苹果设备上的图标<code>apple_icon</code>（背景不要透明）。</p>
 </li>
 <li><p><strong>首页显示模式 Index</strong><br>目前首页的显示模式支持两种，一种是原先的卡片式（前往 <a href="http://wuchong.me/jacman" target="_blank" rel="external">Demo</a> 预览），另一种是类似官方主题的文章展开式（<a href="http://wuchong.me" target="_blank" rel="external">本站</a>即采用的这种）。两者各有优劣，前者首页加载速度更快，后者文章内容更能吸引读者。主题默认采用后一种展开式，如需开启第一种卡片式，请设置<code>index</code>属性下的<code>expand: false</code>。</p>
@@ -191,13 +194,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Jekyll/">Jekyll</a>
+  <a class="article-category-link" href="/categories/Jacman/">Jacman</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Jekyll/">Jekyll</a><a href="/tags/Jacman/">Jacman</a>
+  <span></span> <a href="/tags/Hexo/">Hexo</a><a href="/tags/Jekyll/">Jekyll</a><a href="/tags/Jacman/">Jacman</a>
   </div>
 
 </div>
@@ -221,18 +224,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/06/19/hello-world/" title="Hello World">
+ <a href="/2017/06/23/markdown-grammar/" title="Markdown基本语法">
   <strong>上一篇：</strong><br/>
   <span>
-  Hello World</span>
+  Markdown基本语法</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2017/06/19/gallery-post/"  title="Gallery Post">
+<a href="/2017/06/19/gallery-post/"  title="图片类文章测试">
  <strong>下一篇：</strong><br/> 
- <span>Gallery Post
+ <span>图片类文章测试
 </span>
 </a>
 </div>
@@ -257,7 +260,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主题介绍"><span class="toc-number">1.</span> <span class="toc-text">主题介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置指南"><span class="toc-number">2.</span> <span class="toc-text">配置指南</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性功能"><span class="toc-number">2.1.</span> <span class="toc-text">属性功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-number">3.</span> <span class="toc-text">常见问题</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主题介绍"><span class="toc-number">1.</span> <span class="toc-text">主题介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置指南"><span class="toc-number">2.</span> <span class="toc-text">配置指南</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性功能"><span class="toc-number">3.</span> <span class="toc-text">属性功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-number">4.</span> <span class="toc-text">常见问题</span></a></li></ol>
  
   </div>
 
@@ -288,7 +291,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		  
 		
 		  
-			<li><a href="/categories/Jekyll/" title="Jekyll">Jekyll<sup>1</sup></a></li>
+			<li><a href="/categories/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
 		  
 		
 		  
@@ -309,11 +312,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
 			
 		
 			
@@ -322,6 +325,10 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 			
 				<li><a href="/tags/Blog/" title="Blog">Blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Photo/" title="Photo">Photo<sup>1</sup></a></li>
 			
 		
 			
