@@ -82,6 +82,101 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/06/24/build-blog-with-hexo+github/" title="使用Hexo+Github搭建个人博客" itemprop="url">使用Hexo+Github搭建个人博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="baicharming" target="_blank" itemprop="author">baicharming</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-24T03:40:36.000Z" itemprop="datePublished"> 发表于 2017-06-24</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 是一款基于<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>、快速、简洁且高效的博客框架。Hexo 使用 <a href="http://www.baicharming.com/2017/06/23/what-is-markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的<a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>生成静态网页。</p>
+<p><a href="https://github.com/" target="_blank" rel="external">GitHub</a> 是一个面向开源及私有软件项目的托管平台，它可以托管各种git库，并提供一个web界面。</p>
+<p>下面我将介绍Hexo+Github搭建个人博客的基本步骤，本人在是在<a href="https://www.ubuntu.com" target="_blank" rel="external">Ubuntu16.04</a>操作系统上进行的。</p>
+<hr>
+<h2 id="申请Github账号"><a href="#申请Github账号" class="headerlink" title="申请Github账号"></a>申请Github账号</h2><p>我们用Github进行代码托管，必须有一个Github账号，如果你还没有，马上去注册一个，注册步骤如下：</p>
+<ul>
+<li>首先进入<a href="https://github.com/" target="_blank" rel="external">GitHub 官网</a></li>
+<li>然后在注册页填写你的用户名，邮箱，密码，最后单击“SIGN UP FOR GITHUB”就行了</li>
+<li>接着你可以选择是付费还是使用免费的（默认是免费的），点击“Finish sign up”就行了</li>
+<li>最后别忘了去邮箱点击验证链接，完成整个注册过程</li>
+</ul>
+<h2 id="创建Github仓库"><a href="#创建Github仓库" class="headerlink" title="创建Github仓库"></a>创建Github仓库</h2><p>有了Github账号之后，去创建Github仓库，Repository的名称格式为<code>username.github.io</code>，比如我的username是<code>baicharming</code>，则我的仓库名称为<code>baicharming.github.io</code>，这样以来，你就可以通过访问网址<code>https://baicharming.github.io/</code>去访问该仓库下的页面了，后面我们写的博客文章都会上传到该仓库里。</p>
+<h2 id="安装node-npm-git"><a href="#安装node-npm-git" class="headerlink" title="安装node/npm/git"></a>安装node/npm/git</h2><p>本人是在Ubuntu下进行的，其他操作系统的安装方法在网上都容易获取到，以下是我的安装命令，本人安装的node版本为6.11.0，npm的版本为3.10.10，git的版本为2.7.4。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">安装nodejs：sudo apt-get install nodejs</div><div class="line">安装npm：sudo apt-get install npm</div><div class="line">安装git：sudo apt-get install git</div></pre></td></tr></table></figure>
+<h2 id="安装Hexo并测试"><a href="#安装Hexo并测试" class="headerlink" title="安装Hexo并测试"></a>安装Hexo并测试</h2><p>安装Hexo的命令如下，如果安装失败，将源指向淘宝镜像再试试。本人安装的hexo版本为3.3.7，hexo-cli的版本为1.0.3。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">安装hexo：npm install hexo -g</div><div class="line">或者：npm install hexo-cli -g</div><div class="line">再者：npm install -g hexo-cli --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
+<p>Hexo安装成功之后，进行测试，用以下命令快速新建一个博客系统，并运行它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">初始化博客目录：$ hexo init blog</div><div class="line">进入目录：$ cd blog</div><div class="line">安装依赖：$ npm install</div><div class="line">开启预览服务端口：$ hexo server</div></pre></td></tr></table></figure>
+<p>开启服务之后，访问<code>http://0.0.0.0:4000/</code>就可以看到博客的样子了，默认使用的hexo主题是<code>landscape</code>，如果不能访问则安装过程有错，请去<a href="https://hexo.io/" target="_blank" rel="external">Hexo官网</a> 查看相关文档。下图是我在本地测试的结果，我的主题已更换成<a href="https://github.com/wuchong/jacman" target="_blank" rel="external"><code>Jacman</code></a>主题，更多主题请去<a href="(https://hexo.io/themes/">Hexo主题</a>)查找。</p>
+<p><img src="/img/hexo-test.png" alt="Hexo本地测试"></p>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>上述步骤都成功之后，在blog文件夹下就会生成很多文件夹和文件，如下图所示。其中<code>_config.yml</code>是配置站点的文件，<code>public</code>是hexo生成的静态站点文件夹,<code>scaffolds</code>是模板文件夹,<code>source</code>是存用户资源的文件夹,<code>themes</code>是主题文件夹。</p>
+<p><img src="/img/hexo-contents.png" alt="Hexo文件目录"></p>
+<p>此时修改<code>_config.yml</code>文件，可参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo中文文档</a>，我的部分配置文件如下图所示，值得注意的是，你把<code>url</code>改成<code>https://username.github.io</code>，<code>username</code>是你的Github账户名，把<code>deploy</code>下面的<code>repo</code>改成<code>https://github.com/username/username.github.io.git</code>，其他对应修改即可。</p>
+<p><img src="/img/hexo-config1.png" alt="Hexo配置文件"></p>
+<p><img src="/img/hexo-config2.png" alt="Hexo配置文件"></p>
+<h2 id="新建文章并部署"><a href="#新建文章并部署" class="headerlink" title="新建文章并部署"></a>新建文章并部署</h2><p>现在可以新建自己的博文，并且上传至自己的Github对应的仓库里面，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">进入博客目录：cd blog</div><div class="line">新建文章：hexo new post &quot;文章名称&quot;</div><div class="line">生成静态页面：hexo generate</div><div class="line">安装一个插件（首次需要）：npm install hexo-deployer-git --save</div><div class="line">本地查看（可选）：hexo server</div><div class="line">上传代码：hexo deploy</div><div class="line">几秒钟之后输入自己的Github账户名和密码</div></pre></td></tr></table></figure>
+<p>上传成功的结果如下图所示，然后去自己的Github仓库下，就能看到public下面的所有文件，此时访问<code>https://username.github.io</code>就可以看到自己的博客了。</p>
+<p><img src="/img/deploy.png" alt="上传代码成功"></p>
+<h2 id="申请域名并绑定"><a href="#申请域名并绑定" class="headerlink" title="申请域名并绑定"></a>申请域名并绑定</h2><p>如果觉得自己的域名<code>https://username.github.io</code>比较low，那么你可以去申请以<code>.com</code>，<code>.cn</code>，<code>.me</code>等结尾的域名，域名服务商有很多，国内有<a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a>，<a href="https://www.cndns.com/" target="_blank" rel="external">美橙</a>，<a href="https://domains.dnspod.cn/" target="_blank" rel="external">DNSPod</a>，国外有<a href="https://www.godaddy.com/" target="_blank" rel="external">GoDaddy</a>， <a href="https://www.namecheap.com/" target="_blank" rel="external">NameCheap</a>，我选择的是DNSPod，申请了一个<code>.com</code>结尾的域名<code>baicharming.com</code>。</p>
+<p>申请成功之后，进行域名解析，添加一条记录，“主机记录”为<code>@</code>，“记录类型”为<code>CNAME</code>，“记录值”为<code>baicharming.github.io</code>，这条记录的功能是将域名<code>baicharming.github.io</code>以<code>CNAME</code>的形式解析成<code>baicharming.com</code>，前提是在blog博客目录下的source文件夹下新建一个<code>CNAME</code>文件，内容为你申请的域名，比如我的是<code>baicharming.com</code>。这样以来，你访问域名<code>baicharming.github.io</code>或者<code>baicharming.com</code>都将到达的博客主页。</p>
+<h2 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h2><p>Hexo常用的命令如下，也可以写成缩写的形式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">新建文章：hexo new(或n) &quot;文章名称&quot; </div><div class="line">新建页面：hexo new(或n) page &quot;页面名称&quot;</div><div class="line">生成静态页面至public目录：hexo generate(或g)</div><div class="line">开启预览访问端口:hexo server(或s)</div><div class="line">将代码部署到Github：hexo deploy(或d)</div><div class="line">查看帮助：hexo help(或h)</div><div class="line">查看Hexo的版本：hexo version(或v)</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Hexo/">Hexo</a>►<a class="article-category-link" href="/categories/Hexo/Github/">Github</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Hexo/">Hexo</a><a href="/tags/Github/">Github</a><a href="/tags/Blog/">Blog</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count" style="color:#2ca6cb">
+
+<span id = "sourceId::使用Hexo+Github搭建个人博客" class = "cy_cmt_count"></span>
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4r5urz">
+</script>
+
+	
+</div>
+
+
+</footer>
+
+
+    </article>
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/06/23/what-is-markdown/" title="认识Markdown" itemprop="url">认识Markdown</a>
   </h1>
   <p class="article-author">By
@@ -579,6 +674,14 @@
 		<ul>
 		
 		  
+			<li><a href="/categories/Hexo/Github/" title="Github">Github<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/Jekyll/" title="Jekyll">Jekyll<sup>1</sup></a></li>
 		  
 		
@@ -601,6 +704,18 @@
 		
 			
 				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Github/" title="Github">Github<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Blog/" title="Blog">Blog<sup>1</sup></a></li>
 			
 		
 			
