@@ -4,31 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Markdown基本语法 | 小白博客</title>
+    <title>Ubuntu16.04安装KVM虚拟机 | 小白博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="baicharming">
     
 
     
-    <meta name="description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。以下介绍几种Markdown基本语法： 标题在 Markdown 下，如果一段文字被定义为标题，只要在这段文字前加 # 号即可，1至6个#号对应1至6级标题，如下图所示。">
-<meta name="keywords" content="Markdown">
+    <meta name="description" content="KVM(Kernel-based Virtual Machine的简称)是一个开源的系统虚拟化模块，自Linux 2.6.20之后集成在Linux的各个主要发行版本中。它使用Linux自身的调度器进行管理，所以相对于Xen，其核心源码很少。KVM目前已成为学术界的主流VMM之一。KVM的虚拟化需要硬件支持（如Intel VT技术或者AMD V技术),是基于硬件的完全虚拟化。 下面将介绍在Ubunt">
+<meta name="keywords" content="Ubuntu,KVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown基本语法">
-<meta property="og:url" content="http://www.baicharming.com/2017/06/23/markdown-grammar/index.html">
+<meta property="og:title" content="Ubuntu16.04安装KVM虚拟机">
+<meta property="og:url" content="http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/index.html">
 <meta property="og:site_name" content="小白博客">
-<meta property="og:description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。以下介绍几种Markdown基本语法： 标题在 Markdown 下，如果一段文字被定义为标题，只要在这段文字前加 # 号即可，1至6个#号对应1至6级标题，如下图所示。">
-<meta property="og:image" content="http://www.baicharming.com/img/title.png">
-<meta property="og:image" content="http://www.baicharming.com/img/list.png">
-<meta property="og:image" content="http://www.baicharming.com/img/table.png">
-<meta property="og:image" content="http://www.baicharming.com/img/link.png">
-<meta property="og:image" content="http://www.baicharming.com/img/blockquote.png">
-<meta property="og:image" content="http://www.baicharming.com/img/othergrammar.png">
-<meta property="og:updated_time" content="2017-06-24T07:16:04.000Z">
+<meta property="og:description" content="KVM(Kernel-based Virtual Machine的简称)是一个开源的系统虚拟化模块，自Linux 2.6.20之后集成在Linux的各个主要发行版本中。它使用Linux自身的调度器进行管理，所以相对于Xen，其核心源码很少。KVM目前已成为学术界的主流VMM之一。KVM的虚拟化需要硬件支持（如Intel VT技术或者AMD V技术),是基于硬件的完全虚拟化。 下面将介绍在Ubunt">
+<meta property="og:updated_time" content="2017-07-05T05:12:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown基本语法">
-<meta name="twitter:description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。以下介绍几种Markdown基本语法： 标题在 Markdown 下，如果一段文字被定义为标题，只要在这段文字前加 # 号即可，1至6个#号对应1至6级标题，如下图所示。">
-<meta name="twitter:image" content="http://www.baicharming.com/img/title.png">
+<meta name="twitter:title" content="Ubuntu16.04安装KVM虚拟机">
+<meta name="twitter:description" content="KVM(Kernel-based Virtual Machine的简称)是一个开源的系统虚拟化模块，自Linux 2.6.20之后集成在Linux的各个主要发行版本中。它使用Linux自身的调度器进行管理，所以相对于Xen，其核心源码很少。KVM目前已成为学术界的主流VMM之一。KVM的虚拟化需要硬件支持（如Intel VT技术或者AMD V技术),是基于硬件的完全虚拟化。 下面将介绍在Ubunt">
 
     
     
@@ -89,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/06/23/markdown-grammar/" title="Markdown基本语法" itemprop="url">Markdown基本语法</a>
+      <a href="/2017/07/05/ubuntu-install-kvm/" title="Ubuntu16.04安装KVM虚拟机" itemprop="url">Ubuntu16.04安装KVM虚拟机</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="baicharming" target="_blank" itemprop="author">baicharming</a>
 		
   <p class="article-time">
-    <time datetime="2017-06-23T12:40:36.000Z" itemprop="datePublished"> 发表于 2017-06-23</time>
+    <time datetime="2017-07-05T04:55:50.000Z" itemprop="datePublished"> 发表于 2017-07-05</time>
     
   </p>
 </header>
@@ -105,28 +98,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#标题"><span class="toc-number">1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表"><span class="toc-number">2.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表格"><span class="toc-number">3.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片和链接"><span class="toc-number">4.</span> <span class="toc-text">图片和链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区块引用"><span class="toc-number">5.</span> <span class="toc-text">区块引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他语法"><span class="toc-number">6.</span> <span class="toc-text">其他语法</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#检查CPU是否支持虚拟化"><span class="toc-number">1.</span> <span class="toc-text">检查CPU是否支持虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装KVM相关软件包"><span class="toc-number">2.</span> <span class="toc-text">安装KVM相关软件包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检查安装状态"><span class="toc-number">3.</span> <span class="toc-text">检查安装状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置KVM桥接"><span class="toc-number">4.</span> <span class="toc-text">配置KVM桥接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除virbr0接口"><span class="toc-number">5.</span> <span class="toc-text">删除virbr0接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启系统并启动KVM"><span class="toc-number">6.</span> <span class="toc-text">重启系统并启动KVM</span></a></li></ol>
 		
 		</div>
 		
-		<p><a href="http://www.baicharming.com/2017/06/23/what-is-markdown/">Markdown</a>是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。以下介绍几种Markdown基本语法：</p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>在 Markdown 下，如果一段文字被定义为标题，只要在这段文字前加 # 号即可，1至6个#号对应1至6级标题，如下图所示。</p>
-<a id="more"></a>
-<p><img src="/img/title.png" alt="标题示例"></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>熟悉 HTML 的同学肯定知道有序列表与无序列表的区别，在 Markdown 下，列表的显示只需要在文字前加上 - 或 * 即可变为无序列表，有序列表则直接在文字前加1. 2. 3. 符号和文字之间加上一个字符的空格，如下图所示。</p>
-<p><img src="/img/list.png" alt="列表示例"></p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>表格比较麻烦，但掌握技巧之后也是很easy的，比如在 Markdown 编辑器中输入以下内容：</p>
-<blockquote>
-<p>|  Header 1 |  Header 2 |  Header 3  |<br><br>| ———— | ———– | ———— |<br><br>| Division 1 | Division 2 | Division 3 |<br><br>| Division 1 | Division 2 | Division 3 |<br><br>| Division 1 | Division 2 | Division 3 |<br></p>
-</blockquote>
-<p>在页面中呈现的表格如下图所示。</p>
-<p><img src="/img/table.png" alt="表格示例"></p>
-<h2 id="图片和链接"><a href="#图片和链接" class="headerlink" title="图片和链接"></a>图片和链接</h2><p>插入图片与插入链接的语法很像，区别在一个 ! 号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">插入图片的语法：！[描述](图片链接地址)</div><div class="line">插入链接的语法：[文字](文字链接地址)</div></pre></td></tr></table></figure></p>
-<p><img src="/img/link.png" alt="图片和链接示例"></p>
-<h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>如果你需要引用一小段别处的句子，那么就要用引用的格式，在一段文字前加上 &gt; 符号表示引用，占有自己独立空间，并且有缩进，如下图所示。</p>
-<p><img src="/img/blockquote.png" alt="区块引用示例"></p>
-<h2 id="其他语法"><a href="#其他语法" class="headerlink" title="其他语法"></a>其他语法</h2><p>下面这些也是常用语法，包括字体加粗、字体倾斜、字体加下划线、计算机代码、分割线，如图所示。</p>
-<p><img src="/img/othergrammar.png" alt="其他示例"></p>
+		<p><a href="http://www.linux-kvm.org/page/Main_Page" target="_blank" rel="external">KVM</a>(Kernel-based Virtual Machine的简称)是一个开源的系统虚拟化模块，自<a href="https://www.linux.org/" target="_blank" rel="external">Linux</a> 2.6.20之后集成在Linux的各个主要发行版本中。它使用Linux自身的调度器进行管理，所以相对于<a href="https://www.xenproject.org/" target="_blank" rel="external">Xen</a>，其核心源码很少。KVM目前已成为学术界的主流VMM之一。KVM的虚拟化需要硬件支持（如Intel VT技术或者AMD V技术),是基于硬件的完全虚拟化。</p>
+<p>下面将介绍在Ubuntu16.04下安装KVM虚拟机的基本步骤。</p>
+<h2 id="检查CPU是否支持虚拟化"><a href="#检查CPU是否支持虚拟化" class="headerlink" title="检查CPU是否支持虚拟化"></a>检查CPU是否支持虚拟化</h2><p>通过以下命令若返回vmx或者svm就说明支持VT，如果没有任何的输出，说明你的CPU不支持虚拟化，将无法成功安装KVM虚拟机。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ egrep -o &apos;(vmx|svm)&apos; /proc/cpuinfo</div><div class="line">vmx</div><div class="line">vmx</div><div class="line">vmx</div><div class="line">vmx</div></pre></td></tr></table></figure></p>
+<h2 id="安装KVM相关软件包"><a href="#安装KVM相关软件包" class="headerlink" title="安装KVM相关软件包"></a>安装KVM相关软件包</h2><p>通过以下命令安装相关软件包，其中：<code>virt-manager</code>为GUI管理窗口，<code>bridge-utils</code>用于网络桥接。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install qemu-kvm libvirt-bin virt-manager bridge-utils</div></pre></td></tr></table></figure></p>
+<h2 id="检查安装状态"><a href="#检查安装状态" class="headerlink" title="检查安装状态"></a>检查安装状态</h2><p>运行下面这条命令，若输出为以下信息就说明我们已经安装成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ lsmod | grep kvm</div><div class="line">kvm_intel             172032  0</div><div class="line">kvm                   536576  1 kvm_intel</div></pre></td></tr></table></figure></p>
+<h2 id="配置KVM桥接"><a href="#配置KVM桥接" class="headerlink" title="配置KVM桥接"></a>配置KVM桥接</h2><p>首先用<code>ifconfig</code>命令查看以太网接口的名称（本机是<code>enp3s0</code>），然后安装<code>uml-utilities</code>，最后用编辑器（如<code>emacs</code>、<code>vi</code>）打开文件<code>/etc/network/interfaces</code>，配置桥接，所有命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ ifconfig</div><div class="line">$ sudo apt-get install uml-utilities</div><div class="line">$ sudo emacs /etc/network/interfaces</div><div class="line"></div><div class="line">auto enp3s0</div><div class="line">iface enp3s0 inet manual</div><div class="line"></div><div class="line">auto tap0</div><div class="line">iface tap0 inet manual</div><div class="line">up ifconfig $IFACE 0.0.0.0 up</div><div class="line">down ifconfig $IFACE down</div><div class="line">tunctl_user bai</div><div class="line"></div><div class="line">auto br0</div><div class="line">iface br0 inet static</div><div class="line">bridge_ports enp3s0 tap0</div><div class="line">address 192.168.1.113</div><div class="line">netmask 255.255.255.0</div><div class="line">network 192.168.1.0</div><div class="line">broadcast 192.168.1.255</div><div class="line">gateway 192.168.1.1</div><div class="line">dns-nameserver 114.114.114.114</div></pre></td></tr></table></figure></p>
+<h2 id="删除virbr0接口"><a href="#删除virbr0接口" class="headerlink" title="删除virbr0接口"></a>删除virbr0接口</h2><p>安装KVM后，通过<code>ifconfig</code>，看到了一个名为<code>virbr0</code>的虚拟网络接口。由于在实验中，我们采用桥接方式使用虚拟机，所以这个接口是没有用的，我们通过如下方法可以将其删除。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ virsh net-list</div><div class="line">Name                 State      Autostart     Persistent</div><div class="line">----------------------------------------------------------</div><div class="line"> default              active     yes           yes</div><div class="line"></div><div class="line">$ virsh net-destroy default</div><div class="line">network default destroyed</div><div class="line"></div><div class="line">$ sudo service libvirt-bin restart</div></pre></td></tr></table></figure></p>
+<h2 id="重启系统并启动KVM"><a href="#重启系统并启动KVM" class="headerlink" title="重启系统并启动KVM"></a>重启系统并启动KVM</h2><p>通过<code>virt-manager</code>命令可以启动KVM虚拟机，此时就可以在KVM虚拟机里面通过镜像安装需要的操作系统了，详细步骤请看我的另一篇博文——<a href="http://www.baicharming.com/2017/07/05/kvm-install-ubuntu-server">在KVM中安装Ubuntu Server系统</a>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo reboot</div><div class="line">$ virt-manager</div></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -134,13 +117,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Markdown/">Markdown</a>
+  <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>►<a class="article-category-link" href="/categories/Ubuntu/KVM/">KVM</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Markdown/">Markdown</a>
+  <span></span> <a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/KVM/">KVM</a>
   </div>
 
 </div>
@@ -149,7 +132,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.baicharming.com/2017/06/23/markdown-grammar/" data-title="Markdown基本语法 | 小白博客" data-tsina="2771721881" class="share clearfix">
+	  <div data-url="http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/" data-title="Ubuntu16.04安装KVM虚拟机 | 小白博客" data-tsina="2771721881" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -164,18 +147,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/06/23/what-is-markdown/" title="认识Markdown">
+ <a href="/2017/07/05/kvm-install-ubuntu-server/" title="在KVM中安装Ubuntu Server系统">
   <strong>上一篇：</strong><br/>
   <span>
-  认识Markdown</span>
+  在KVM中安装Ubuntu Server系统</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2017/06/19/how-to-use-jacman/"  title="如何使用 Jacman 主题">
+<a href="/2017/06/24/build-blog-with-hexo-github/"  title="使用Hexo和Github搭建个人博客">
  <strong>下一篇：</strong><br/> 
- <span>如何使用 Jacman 主题
+ <span>使用Hexo和Github搭建个人博客
 </span>
 </a>
 </div>
@@ -183,7 +166,7 @@
 </nav>
 
 	
-<section id="comments">  <div id="SOHUCS" sid="Markdown基本语法"></div> <script type="text/javascript"> 
+<section id="comments">  <div id="SOHUCS" sid="Ubuntu16.04安装KVM虚拟机"></div> <script type="text/javascript"> 
 (function(){ 
 var appid = 'cyt4r5urz'; 
 var conf = 'prod_d4c78aa306c5f0779d60e2fbe3627e81'; 
@@ -200,7 +183,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#标题"><span class="toc-number">1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表"><span class="toc-number">2.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表格"><span class="toc-number">3.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片和链接"><span class="toc-number">4.</span> <span class="toc-text">图片和链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区块引用"><span class="toc-number">5.</span> <span class="toc-text">区块引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他语法"><span class="toc-number">6.</span> <span class="toc-text">其他语法</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#检查CPU是否支持虚拟化"><span class="toc-number">1.</span> <span class="toc-text">检查CPU是否支持虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装KVM相关软件包"><span class="toc-number">2.</span> <span class="toc-text">安装KVM相关软件包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检查安装状态"><span class="toc-number">3.</span> <span class="toc-text">检查安装状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置KVM桥接"><span class="toc-number">4.</span> <span class="toc-text">配置KVM桥接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除virbr0接口"><span class="toc-number">5.</span> <span class="toc-text">删除virbr0接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启系统并启动KVM"><span class="toc-number">6.</span> <span class="toc-text">重启系统并启动KVM</span></a></li></ol>
  
   </div>
 
