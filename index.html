@@ -82,70 +82,6 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/07/05/kvm-install-ubuntu-server/" title="在KVM中安装Ubuntu Server系统" itemprop="url">在KVM中安装Ubuntu Server系统</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="baicharming" target="_blank" itemprop="author">baicharming</a>
-		
-  <p class="article-time">
-    <time datetime="2017-07-05T05:55:50.000Z" itemprop="datePublished"> 发表于 2017-07-05</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>hello</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>►<a class="article-category-link" href="/categories/Ubuntu/KVM/">KVM</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/KVM/">KVM</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count" style="color:#2ca6cb">
-
-<span id = "sourceId::在KVM中安装Ubuntu Server系统" class = "cy_cmt_count"></span>
-<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4r5urz">
-</script>
-
-	
-</div>
-
-
-</footer>
-
-
-    </article>
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
       <a href="/2017/07/05/ubuntu-install-kvm/" title="Ubuntu16.04安装KVM虚拟机" itemprop="url">Ubuntu16.04安装KVM虚拟机</a>
   </h1>
   <p class="article-author">By
@@ -161,16 +97,11 @@
         
         <p><a href="http://www.linux-kvm.org/page/Main_Page" target="_blank" rel="external">KVM</a>(Kernel-based Virtual Machine的简称)是一个开源的系统虚拟化模块，自<a href="https://www.linux.org/" target="_blank" rel="external">Linux</a> 2.6.20之后集成在Linux的各个主要发行版本中。它使用Linux自身的调度器进行管理，所以相对于<a href="https://www.xenproject.org/" target="_blank" rel="external">Xen</a>，其核心源码很少。KVM目前已成为学术界的主流VMM之一。KVM的虚拟化需要硬件支持（如Intel VT技术或者AMD V技术),是基于硬件的完全虚拟化。</p>
 <p>下面将介绍在Ubuntu16.04下安装KVM虚拟机的基本步骤。</p>
-<h2 id="检查CPU是否支持虚拟化"><a href="#检查CPU是否支持虚拟化" class="headerlink" title="检查CPU是否支持虚拟化"></a>检查CPU是否支持虚拟化</h2><p>通过以下命令若返回vmx或者svm就说明支持VT，如果没有任何的输出，说明你的CPU不支持虚拟化，将无法成功安装KVM虚拟机。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ egrep -o &apos;(vmx|svm)&apos; /proc/cpuinfo</div><div class="line">vmx</div><div class="line">vmx</div><div class="line">vmx</div><div class="line">vmx</div></pre></td></tr></table></figure></p>
-<h2 id="安装KVM相关软件包"><a href="#安装KVM相关软件包" class="headerlink" title="安装KVM相关软件包"></a>安装KVM相关软件包</h2><p>通过以下命令安装相关软件包，其中：<code>virt-manager</code>为GUI管理窗口，<code>bridge-utils</code>用于网络桥接。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install qemu-kvm libvirt-bin virt-manager bridge-utils</div></pre></td></tr></table></figure></p>
-<h2 id="检查安装状态"><a href="#检查安装状态" class="headerlink" title="检查安装状态"></a>检查安装状态</h2><p>运行下面这条命令，若输出为以下信息就说明我们已经安装成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ lsmod | grep kvm</div><div class="line">kvm_intel             172032  0</div><div class="line">kvm                   536576  1 kvm_intel</div></pre></td></tr></table></figure></p>
-<h2 id="配置KVM桥接"><a href="#配置KVM桥接" class="headerlink" title="配置KVM桥接"></a>配置KVM桥接</h2><p>首先用<code>ifconfig</code>命令查看以太网接口的名称（本机是<code>enp3s0</code>），然后安装<code>uml-utilities</code>，最后用编辑器（如<code>emacs</code>、<code>vi</code>）打开文件<code>/etc/network/interfaces</code>，配置桥接，所有命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ ifconfig</div><div class="line">$ sudo apt-get install uml-utilities</div><div class="line">$ sudo emacs /etc/network/interfaces</div><div class="line"></div><div class="line">auto enp3s0</div><div class="line">iface enp3s0 inet manual</div><div class="line"></div><div class="line">auto tap0</div><div class="line">iface tap0 inet manual</div><div class="line">up ifconfig $IFACE 0.0.0.0 up</div><div class="line">down ifconfig $IFACE down</div><div class="line">tunctl_user bai</div><div class="line"></div><div class="line">auto br0</div><div class="line">iface br0 inet static</div><div class="line">bridge_ports enp3s0 tap0</div><div class="line">address 192.168.1.113</div><div class="line">netmask 255.255.255.0</div><div class="line">network 192.168.1.0</div><div class="line">broadcast 192.168.1.255</div><div class="line">gateway 192.168.1.1</div><div class="line">dns-nameserver 114.114.114.114</div></pre></td></tr></table></figure></p>
-<h2 id="删除virbr0接口"><a href="#删除virbr0接口" class="headerlink" title="删除virbr0接口"></a>删除virbr0接口</h2><p>安装KVM后，通过<code>ifconfig</code>，看到了一个名为<code>virbr0</code>的虚拟网络接口。由于在实验中，我们采用桥接方式使用虚拟机，所以这个接口是没有用的，我们通过如下方法可以将其删除。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ virsh net-list</div><div class="line">Name                 State      Autostart     Persistent</div><div class="line">----------------------------------------------------------</div><div class="line"> default              active     yes           yes</div><div class="line"></div><div class="line">$ virsh net-destroy default</div><div class="line">network default destroyed</div><div class="line"></div><div class="line">$ sudo service libvirt-bin restart</div></pre></td></tr></table></figure></p>
-<h2 id="重启系统并启动KVM"><a href="#重启系统并启动KVM" class="headerlink" title="重启系统并启动KVM"></a>重启系统并启动KVM</h2><p>通过<code>virt-manager</code>命令可以启动KVM虚拟机，此时就可以在KVM虚拟机里面通过镜像安装需要的操作系统了，详细步骤请看我的另一篇博文——<a href="http://www.baicharming.com/2017/07/05/kvm-install-ubuntu-server">在KVM中安装Ubuntu Server系统</a>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo reboot</div><div class="line">$ virt-manager</div></pre></td></tr></table></figure></p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/2017/07/05/ubuntu-install-kvm/#more">查看更多</a>
           
        </p>
     </div>
@@ -574,7 +505,7 @@
 		  
 		
 		  
-			<li><a href="/categories/Ubuntu/KVM/" title="KVM">KVM<sup>2</sup></a></li>
+			<li><a href="/categories/Ubuntu/KVM/" title="KVM">KVM<sup>1</sup></a></li>
 		  
 		
 		  
@@ -586,7 +517,7 @@
 		  
 		
 		  
-			<li><a href="/categories/Ubuntu/" title="Ubuntu">Ubuntu<sup>2</sup></a></li>
+			<li><a href="/categories/Ubuntu/" title="Ubuntu">Ubuntu<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -597,14 +528,6 @@
 <div class="tagslist">
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/Ubuntu/" title="Ubuntu">Ubuntu<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/KVM/" title="KVM">KVM<sup>2</sup></a></li>
-			
 		
 			
 				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>2</sup></a></li>
@@ -632,6 +555,14 @@
 		
 			
 				<li><a href="/tags/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Ubuntu/" title="Ubuntu">Ubuntu<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/KVM/" title="KVM">KVM<sup>1</sup></a></li>
 			
 		
 		</ul>
