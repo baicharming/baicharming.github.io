@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Ubuntu16.04安装KVM虚拟机 | 小白博客</title>
+    <title>Ubuntu下搭建本地Git服务器 | 小白博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="baicharming">
     
 
     
-    <meta name="description" content="KVM(Kernel-based Virtual Machine的简称)是一个开源的系统虚拟化模块，自Linux 2.6.20之后集成在Linux的各个主要发行版本中。它使用Linux自身的调度器进行管理，所以相对于Xen，其核心源码很少。KVM目前已成为学术界的主流VMM之一。KVM的虚拟化需要硬件支持（如Intel VT技术或者AMD V技术),是基于硬件的完全虚拟化。 下面将介绍在Ubunt">
-<meta name="keywords" content="Ubuntu,KVM">
+    <meta name="description" content="GitHub 是一个免费托管开源代码的远程仓库。但是对于某些视源代码如生命的商业公司来说，既不想公开源代码，又舍不得给GitHub交保护费，那就只能自己搭建一台Git服务器作为私有仓库使用。 另外对于一个小型开发团队，在本地搭建一个Git服务器用来管理代码的版本是很有必要的。在一个局域网内，现有两台Ubuntu系统的PC机，一台PC机作为Git服务器，另一台PC机将通过Git服务器管理自己的代码。">
+<meta name="keywords" content="Ubuntu,Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu16.04安装KVM虚拟机">
-<meta property="og:url" content="http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/index.html">
+<meta property="og:title" content="Ubuntu下搭建本地Git服务器">
+<meta property="og:url" content="http://www.baicharming.com/2017/07/05/ubuntu-build-git-server/index.html">
 <meta property="og:site_name" content="小白博客">
-<meta property="og:description" content="KVM(Kernel-based Virtual Machine的简称)是一个开源的系统虚拟化模块，自Linux 2.6.20之后集成在Linux的各个主要发行版本中。它使用Linux自身的调度器进行管理，所以相对于Xen，其核心源码很少。KVM目前已成为学术界的主流VMM之一。KVM的虚拟化需要硬件支持（如Intel VT技术或者AMD V技术),是基于硬件的完全虚拟化。 下面将介绍在Ubunt">
-<meta property="og:updated_time" content="2017-07-05T07:21:51.000Z">
+<meta property="og:description" content="GitHub 是一个免费托管开源代码的远程仓库。但是对于某些视源代码如生命的商业公司来说，既不想公开源代码，又舍不得给GitHub交保护费，那就只能自己搭建一台Git服务器作为私有仓库使用。 另外对于一个小型开发团队，在本地搭建一个Git服务器用来管理代码的版本是很有必要的。在一个局域网内，现有两台Ubuntu系统的PC机，一台PC机作为Git服务器，另一台PC机将通过Git服务器管理自己的代码。">
+<meta property="og:updated_time" content="2017-07-05T12:43:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu16.04安装KVM虚拟机">
-<meta name="twitter:description" content="KVM(Kernel-based Virtual Machine的简称)是一个开源的系统虚拟化模块，自Linux 2.6.20之后集成在Linux的各个主要发行版本中。它使用Linux自身的调度器进行管理，所以相对于Xen，其核心源码很少。KVM目前已成为学术界的主流VMM之一。KVM的虚拟化需要硬件支持（如Intel VT技术或者AMD V技术),是基于硬件的完全虚拟化。 下面将介绍在Ubunt">
+<meta name="twitter:title" content="Ubuntu下搭建本地Git服务器">
+<meta name="twitter:description" content="GitHub 是一个免费托管开源代码的远程仓库。但是对于某些视源代码如生命的商业公司来说，既不想公开源代码，又舍不得给GitHub交保护费，那就只能自己搭建一台Git服务器作为私有仓库使用。 另外对于一个小型开发团队，在本地搭建一个Git服务器用来管理代码的版本是很有必要的。在一个局域网内，现有两台Ubuntu系统的PC机，一台PC机作为Git服务器，另一台PC机将通过Git服务器管理自己的代码。">
 
     
     
@@ -82,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/07/05/ubuntu-install-kvm/" title="Ubuntu16.04安装KVM虚拟机" itemprop="url">Ubuntu16.04安装KVM虚拟机</a>
+      <a href="/2017/07/05/ubuntu-build-git-server/" title="Ubuntu下搭建本地Git服务器" itemprop="url">Ubuntu下搭建本地Git服务器</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="baicharming" target="_blank" itemprop="author">baicharming</a>
 		
   <p class="article-time">
-    <time datetime="2017-07-05T04:55:50.000Z" itemprop="datePublished"> 发表于 2017-07-05</time>
+    <time datetime="2017-07-05T11:55:50.000Z" itemprop="datePublished"> 发表于 2017-07-05</time>
     
   </p>
 </header>
@@ -98,19 +98,135 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#检查CPU是否支持虚拟化"><span class="toc-number">1.</span> <span class="toc-text">检查CPU是否支持虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装KVM相关软件包"><span class="toc-number">2.</span> <span class="toc-text">安装KVM相关软件包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检查安装状态"><span class="toc-number">3.</span> <span class="toc-text">检查安装状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置KVM桥接"><span class="toc-number">4.</span> <span class="toc-text">配置KVM桥接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除virbr0接口"><span class="toc-number">5.</span> <span class="toc-text">删除virbr0接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启系统并启动KVM"><span class="toc-number">6.</span> <span class="toc-text">重启系统并启动KVM</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git服务器的配置"><span class="toc-number">1.</span> <span class="toc-text">Git服务器的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git服务器的使用"><span class="toc-number">2.</span> <span class="toc-text">Git服务器的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建立分支并提交"><span class="toc-number">3.</span> <span class="toc-text">建立分支并提交</span></a></li></ol>
 		
 		</div>
 		
-		<p><a href="http://www.linux-kvm.org/page/Main_Page" target="_blank" rel="external">KVM</a>(Kernel-based Virtual Machine的简称)是一个开源的系统虚拟化模块，自<a href="https://www.linux.org/" target="_blank" rel="external">Linux</a> 2.6.20之后集成在Linux的各个主要发行版本中。它使用Linux自身的调度器进行管理，所以相对于<a href="https://www.xenproject.org/" target="_blank" rel="external">Xen</a>，其核心源码很少。KVM目前已成为学术界的主流VMM之一。KVM的虚拟化需要硬件支持（如Intel VT技术或者AMD V技术),是基于硬件的完全虚拟化。</p>
-<p>下面将介绍在Ubuntu16.04下安装KVM虚拟机的基本步骤。</p>
-<a id="more"></a>
-<h2 id="检查CPU是否支持虚拟化"><a href="#检查CPU是否支持虚拟化" class="headerlink" title="检查CPU是否支持虚拟化"></a>检查CPU是否支持虚拟化</h2><p>通过以下命令若返回vmx或者svm就说明支持VT，如果没有任何的输出，说明你的CPU不支持虚拟化，将无法成功安装KVM虚拟机。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ egrep -o &apos;(vmx|svm)&apos; /proc/cpuinfo</div><div class="line">vmx</div><div class="line">vmx</div><div class="line">vmx</div><div class="line">vmx</div></pre></td></tr></table></figure></p>
-<h2 id="安装KVM相关软件包"><a href="#安装KVM相关软件包" class="headerlink" title="安装KVM相关软件包"></a>安装KVM相关软件包</h2><p>通过以下命令安装相关软件包，其中：<code>virt-manager</code>为GUI管理窗口，<code>bridge-utils</code>用于网络桥接。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install qemu-kvm libvirt-bin virt-manager bridge-utils</div></pre></td></tr></table></figure></p>
-<h2 id="检查安装状态"><a href="#检查安装状态" class="headerlink" title="检查安装状态"></a>检查安装状态</h2><p>运行下面这条命令，若输出为以下信息就说明我们已经安装成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ lsmod | grep kvm</div><div class="line">kvm_intel             172032  0</div><div class="line">kvm                   536576  1 kvm_intel</div></pre></td></tr></table></figure></p>
-<h2 id="配置KVM桥接"><a href="#配置KVM桥接" class="headerlink" title="配置KVM桥接"></a>配置KVM桥接</h2><p>首先用<code>ifconfig</code>命令查看以太网接口的名称（本机是<code>enp3s0</code>），然后安装<code>uml-utilities</code>，最后用编辑器（如<code>emacs</code>、<code>vi</code>）打开文件<code>/etc/network/interfaces</code>，配置桥接，所有命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ ifconfig</div><div class="line">$ sudo apt-get install uml-utilities</div><div class="line">$ sudo emacs /etc/network/interfaces</div><div class="line"></div><div class="line">auto enp3s0</div><div class="line">iface enp3s0 inet manual</div><div class="line"></div><div class="line">auto tap0</div><div class="line">iface tap0 inet manual</div><div class="line">up ifconfig $IFACE 0.0.0.0 up</div><div class="line">down ifconfig $IFACE down</div><div class="line">tunctl_user bai</div><div class="line"></div><div class="line">auto br0</div><div class="line">iface br0 inet static</div><div class="line">bridge_ports enp3s0 tap0</div><div class="line">address 192.168.1.113</div><div class="line">netmask 255.255.255.0</div><div class="line">network 192.168.1.0</div><div class="line">broadcast 192.168.1.255</div><div class="line">gateway 192.168.1.1</div><div class="line">dns-nameserver 114.114.114.114</div></pre></td></tr></table></figure></p>
-<h2 id="删除virbr0接口"><a href="#删除virbr0接口" class="headerlink" title="删除virbr0接口"></a>删除virbr0接口</h2><p>安装KVM后，通过<code>ifconfig</code>，看到了一个名为<code>virbr0</code>的虚拟网络接口。由于在实验中，我们采用桥接方式使用虚拟机，所以这个接口是没有用的，我们通过如下方法可以将其删除。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ virsh net-list</div><div class="line">Name                 State      Autostart     Persistent</div><div class="line">----------------------------------------------------------</div><div class="line"> default              active     yes           yes</div><div class="line"></div><div class="line">$ virsh net-destroy default</div><div class="line">network default destroyed</div><div class="line"></div><div class="line">$ sudo service libvirt-bin restart</div></pre></td></tr></table></figure></p>
-<h2 id="重启系统并启动KVM"><a href="#重启系统并启动KVM" class="headerlink" title="重启系统并启动KVM"></a>重启系统并启动KVM</h2><p>重启系统之后，通过<code>virt-manager</code>命令可以启动KVM虚拟机，此时就可以在KVM虚拟机里面通过镜像安装需要的操作系统了，步骤很简单，我就不阐述了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo reboot</div><div class="line">$ virt-manager</div></pre></td></tr></table></figure></p>
+		<p><a href="https://github.com/" target="_blank" rel="external">GitHub</a> 是一个免费托管开源代码的远程仓库。但是对于某些视源代码如生命的商业公司来说，既不想公开源代码，又舍不得给GitHub交保护费，那就只能自己搭建一台Git服务器作为私有仓库使用。</p>
+<p>另外对于一个小型开发团队，在本地搭建一个Git服务器用来管理代码的版本是很有必要的。在一个局域网内，现有两台Ubuntu系统的PC机，一台PC机作为Git服务器，另一台PC机将通过Git服务器管理自己的代码。</p>
+<h2 id="Git服务器的配置"><a href="#Git服务器的配置" class="headerlink" title="Git服务器的配置"></a>Git服务器的配置</h2><ul>
+<li><p><strong>设置静态IP地址</strong></p>
+<blockquote>
+<p>$ sudo emacs /etc/network/interfaces<br>请参考我的另一篇文章<a href="http://www.baicharming.com/2017/07/05/frequently-used-commands">《Ubuntu下自己常用命令》</a><br>假设将IP地址设置为192.168.1.121</p>
+</blockquote>
+</li>
+<li><p><strong>安装git服务</strong></p>
+<blockquote>
+<p>$ sudo apt-get install git</p>
+</blockquote>
+</li>
+<li><p><strong>创建一个git用户</strong></p>
+<blockquote>
+<p>$ sudo adduser git</p>
+</blockquote>
+</li>
+<li><p><strong>在git用户下建立.ssh目录</strong></p>
+<blockquote>
+<p>$ cd /home/git/<br>$ mkdir .ssh<br>$ sudo chmod 700 .shh</p>
+</blockquote>
+</li>
+<li><p><strong>在.ssh目录下建立authorized_keys文件</strong></p>
+<blockquote>
+<p>$ cd /home/git/.ssh/<br>$ touch authorized_keys<br>$ sudo chmod 600 authorized_keys</p>
+</blockquote>
+</li>
+<li><p><strong>在/srv目录下建立一个git仓库</strong></p>
+<blockquote>
+<p>$ cd /srv<br>$ sudo git init –bare bai.git</p>
+</blockquote>
+</li>
+<li><p><strong>修改git仓库的所属者</strong></p>
+<blockquote>
+<p>$ cd /srv<br>$ sudo chown -R git:git bai.git</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Git服务器的使用"><a href="#Git服务器的使用" class="headerlink" title="Git服务器的使用"></a>Git服务器的使用</h2><p>局域网中除了Git服务器以外的PC机进行如下配置，才能使用Git服务器管理自己的代码。</p>
+<ul>
+<li><p><strong>安装git和ssh</strong></p>
+<blockquote>
+<p>$ sudo apt-get install git ssh</p>
+</blockquote>
+</li>
+<li><p><strong>git全局变量配置</strong></p>
+<blockquote>
+<p>$ git config –global user.email “1406729239@qq.com”<br>$ git config –global user.name “bai”</p>
+</blockquote>
+</li>
+<li><p><strong>生成ssh密钥</strong></p>
+<blockquote>
+<p>$ ssh-keygen -t rsa -C “1406729239@qq.com”</p>
+</blockquote>
+</li>
+<li><p><strong>查看密钥</strong></p>
+<blockquote>
+<p>$ cat ~/.ssh/id_rsa.pub</p>
+</blockquote>
+</li>
+<li><p><strong>复制密钥到git服务器上</strong></p>
+<blockquote>
+<p>$ scp ~/.ssh/id_rsa.pub git@192.168.1.121:/home/git/</p>
+</blockquote>
+</li>
+<li><p><strong>远程登录git服务器</strong></p>
+<blockquote>
+<p>$ ssh git@192.168.1.121</p>
+</blockquote>
+</li>
+<li><p><strong>把密钥追加到authorized_keys文件</strong></p>
+<blockquote>
+<p>$ cat id_rsa.pub &gt;&gt; .ssh/authorized_keys</p>
+</blockquote>
+</li>
+<li><p><strong>回到自己主机开始克隆</strong></p>
+<blockquote>
+<p>$ git clone git@192.168.1.121:/srv/bai.git</p>
+</blockquote>
+</li>
+<li><p><strong>进/bai这个目录，创建新文件</strong></p>
+<blockquote>
+<p>$ cd /bai<br>$ touch test</p>
+</blockquote>
+</li>
+<li><p><strong>提交到git服务器</strong></p>
+<blockquote>
+<p>$ git add -A<br>$ git status<br>$ git commit -m “这是一个新文件”<br>$ git push origin master</p>
+</blockquote>
+</li>
+<li><p><strong>远程登录git服务器</strong></p>
+<blockquote>
+<p>$ ssh git@192.168.1.121</p>
+</blockquote>
+</li>
+<li><p><strong>再次克隆git仓库</strong></p>
+<blockquote>
+<p>$ git clone git@192.168.1.121:/srv/bai.git</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="建立分支并提交"><a href="#建立分支并提交" class="headerlink" title="建立分支并提交"></a>建立分支并提交</h2><p>在一个团队项目开发中，为了有效的管理，将涉及到不同方向的开发代码，比如后端代码、前端代码、测试代码等。那么就需要分支管理，每个方向建立一个分支，互不影响，下面将简单介绍一下。</p>
+<ul>
+<li><p><strong>先克隆主干</strong></p>
+<blockquote>
+<p>$ git clone git@192.168.1.121:/srv/bai.git</p>
+</blockquote>
+</li>
+<li><p><strong>然后建立分支</strong></p>
+<blockquote>
+<p>$ git checkout -b branchname</p>
+</blockquote>
+</li>
+<li><p><strong>其次创建新文件</strong></p>
+<blockquote>
+<p>$ touch test.txt</p>
+</blockquote>
+</li>
+<li><p><strong>最后提交到分支</strong></p>
+<blockquote>
+<p>$ git add -A<br>$ git status<br>$ git commit -m “这是一个新文件”<br>$ git push origin branchname</p>
+</blockquote>
+</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -118,13 +234,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>►<a class="article-category-link" href="/categories/Ubuntu/KVM/">KVM</a>
+  <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>►<a class="article-category-link" href="/categories/Ubuntu/Git/">Git</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/KVM/">KVM</a>
+  <span></span> <a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/Git/">Git</a>
   </div>
 
 </div>
@@ -133,7 +249,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/" data-title="Ubuntu16.04安装KVM虚拟机 | 小白博客" data-tsina="2771721881" class="share clearfix">
+	  <div data-url="http://www.baicharming.com/2017/07/05/ubuntu-build-git-server/" data-title="Ubuntu下搭建本地Git服务器 | 小白博客" data-tsina="2771721881" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,19 +263,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/07/05/ubuntu-install-sogou/" title="Ubuntu安装搜狗输入法">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Ubuntu安装搜狗输入法</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/06/24/build-blog-with-hexo-github/"  title="使用Hexo和Github搭建个人博客">
+<a href="/2017/07/05/frequently-used-commands/"  title="Ubuntu下自己常用命令">
  <strong>下一篇：</strong><br/> 
- <span>使用Hexo和Github搭建个人博客
+ <span>Ubuntu下自己常用命令
 </span>
 </a>
 </div>
@@ -167,7 +275,7 @@
 </nav>
 
 	
-<section id="comments">  <div id="SOHUCS" sid="Ubuntu16.04安装KVM虚拟机"></div> <script type="text/javascript"> 
+<section id="comments">  <div id="SOHUCS" sid="Ubuntu下搭建本地Git服务器"></div> <script type="text/javascript"> 
 (function(){ 
 var appid = 'cyt4r5urz'; 
 var conf = 'prod_d4c78aa306c5f0779d60e2fbe3627e81'; 
@@ -184,7 +292,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#检查CPU是否支持虚拟化"><span class="toc-number">1.</span> <span class="toc-text">检查CPU是否支持虚拟化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装KVM相关软件包"><span class="toc-number">2.</span> <span class="toc-text">安装KVM相关软件包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检查安装状态"><span class="toc-number">3.</span> <span class="toc-text">检查安装状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置KVM桥接"><span class="toc-number">4.</span> <span class="toc-text">配置KVM桥接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除virbr0接口"><span class="toc-number">5.</span> <span class="toc-text">删除virbr0接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启系统并启动KVM"><span class="toc-number">6.</span> <span class="toc-text">重启系统并启动KVM</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git服务器的配置"><span class="toc-number">1.</span> <span class="toc-text">Git服务器的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git服务器的使用"><span class="toc-number">2.</span> <span class="toc-text">Git服务器的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建立分支并提交"><span class="toc-number">3.</span> <span class="toc-text">建立分支并提交</span></a></li></ol>
  
   </div>
 
