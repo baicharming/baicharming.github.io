@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
+    <lastmod>2017-07-07T01:24:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu下自己常用命令</title>
+        <pubTime>2017-07-05T09:55:50.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ubuntu" url="http://www.baicharming.com/categories/Ubuntu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/</loc>
@@ -66,26 +86,6 @@
            
              
               <breadCrumb title="Github" url="http://www.baicharming.com/categories/Github/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
-    <lastmod>2017-07-05T10:45:30.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu下自己常用命令</title>
-        <pubTime>2017-07-05T09:55:50.000Z</pubTime>
-        
-        <tag>Ubuntu</tag>
-         
-         
-           
-             
-              <breadCrumb title="Ubuntu" url="http://www.baicharming.com/categories/Ubuntu/"/>
           
         </display>
     </data>
