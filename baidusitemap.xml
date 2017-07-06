@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/</loc>
+    <lastmod>2017-07-05T13:07:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu16.04安装KVM虚拟机</title>
+        <pubTime>2017-07-05T04:55:50.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+        <tag>KVM</tag>
+         
+         
+           
+             
+              <breadCrumb title="KVM" url="http://www.baicharming.com/categories/KVM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/ubuntu-build-git-server/</loc>
+    <lastmod>2017-07-05T13:05:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu下搭建本地Git服务器</title>
+        <pubTime>2017-07-05T11:55:50.000Z</pubTime>
+        
+        <tag>Github</tag>
+         
+        <tag>Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="Github" url="http://www.baicharming.com/categories/Github/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/06/24/build-blog-with-hexo-github/</loc>
+    <lastmod>2017-07-05T13:05:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用Hexo和Github搭建个人博客</title>
+        <pubTime>2017-06-24T03:40:36.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Github</tag>
+         
+        <tag>Blog</tag>
+         
+         
+           
+             
+              <breadCrumb title="Github" url="http://www.baicharming.com/categories/Github/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
+    <lastmod>2017-07-05T10:45:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu下自己常用命令</title>
+        <pubTime>2017-07-05T09:55:50.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ubuntu" url="http://www.baicharming.com/categories/Ubuntu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/06/23/markdown-grammar/</loc>
+    <lastmod>2017-07-05T08:56:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown基本语法</title>
+        <pubTime>2017-06-23T12:40:36.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="http://www.baicharming.com/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-sogou/</loc>
+    <lastmod>2017-07-05T08:49:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu安装搜狗输入法</title>
+        <pubTime>2017-07-05T07:40:36.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ubuntu" url="http://www.baicharming.com/categories/Ubuntu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/06/23/what-is-markdown/</loc>
+    <lastmod>2017-06-24T08:07:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>认识Markdown</title>
+        <pubTime>2017-06-23T13:40:36.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="http://www.baicharming.com/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/06/19/how-to-use-jacman/</loc>
+    <lastmod>2017-06-24T08:05:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何使用 Jacman 主题</title>
+        <pubTime>2017-06-19T12:55:50.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Blog</tag>
+         
+        <tag>Jekyll</tag>
+         
+        <tag>Jacman</tag>
+         
+         
+           
+             
+              <breadCrumb title="Jacman" url="http://www.baicharming.com/categories/Jacman/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/06/19/gallery-post/</loc>
+    <lastmod>2017-06-24T07:44:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>图片类文章测试</title>
+        <pubTime>2017-06-19T12:44:29.000Z</pubTime>
+        
+        <tag>Photo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Photo" url="http://www.baicharming.com/categories/Photo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+</urlset>
