@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://www.baicharming.com/2017/07/12/mysql-commands/index.html">
 <meta property="og:site_name" content="小白博客">
 <meta property="og:description" content="MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件。 MySQL安装这里我只介绍在Ubuntu16.04下安装MySQL5.7的方法，命令如下，在安装的过程中会提示你输入root账户">
-<meta property="og:updated_time" content="2017-07-12T14:48:06.000Z">
+<meta property="og:updated_time" content="2017-07-12T15:00:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL常用命令">
 <meta name="twitter:description" content="MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件。 MySQL安装这里我只介绍在Ubuntu16.04下安装MySQL5.7的方法，命令如下，在安装的过程中会提示你输入root账户">
@@ -103,15 +103,9 @@
 		</div>
 		
 		<p><a href="https://www.mysql.com/" target="_blank" rel="external">MySQL</a>是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 <a href="https://www.oracle.com" target="_blank" rel="external">Oracle</a> 旗下产品。在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件。</p>
-<h2 id="MySQL安装"><a href="#MySQL安装" class="headerlink" title="MySQL安装"></a>MySQL安装</h2><p>这里我只介绍在Ubuntu16.04下安装MySQL5.7的方法，命令如下，在安装的过程中会提示你输入root账户的密码和确认密码，我一般将密码设置为root。</p>
-<blockquote>
-<p>$ sudo apt-get install mysql-client-5.7 mysql-server-5.7</p>
-</blockquote>
+<h2 id="MySQL安装"><a href="#MySQL安装" class="headerlink" title="MySQL安装"></a>MySQL安装</h2><p>这里我只介绍在Ubuntu16.04下安装MySQL5.7的方法，命令如下，在安装的过程中会提示你输入root账户的密码和确认密码，我一般将密码设置为root。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install mysql-client-5.7 mysql-server-5.7</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h2 id="MySQL进入与退出"><a href="#MySQL进入与退出" class="headerlink" title="MySQL进入与退出"></a>MySQL进入与退出</h2><p>MySQL安装好之后，在终端输入以下命令，然后回车输入root账户密码，若终端出现<code>mysql &gt;</code>，表示成功进入MySQL。退出MySQL可以用<code>exit</code>、<code>quit</code>或<code>Crtl+D</code>。</p>
-<blockquote>
-<p>$ mysql -u root -p</p>
-</blockquote>
+<h2 id="MySQL进入与退出"><a href="#MySQL进入与退出" class="headerlink" title="MySQL进入与退出"></a>MySQL进入与退出</h2><p>MySQL安装好之后，在终端输入以下命令，然后回车输入root账户密码，若终端出现<code>mysql &gt;</code>，表示成功进入MySQL。退出MySQL可以用<code>exit</code>、<code>quit</code>或<code>Crtl+D</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql -u root -p</div></pre></td></tr></table></figure></p>
 <h2 id="MySQL数据库操作"><a href="#MySQL数据库操作" class="headerlink" title="MySQL数据库操作"></a>MySQL数据库操作</h2><ul>
 <li><p><strong>创建数据库</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">命令：create database &lt;数据库名&gt;;</div><div class="line">例如：创建一个名称为Charming的数据库</div><div class="line">mysql &gt; create database Charming;</div></pre></td></tr></table></figure>
@@ -294,15 +288,23 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/Blog/" title="Blog">Blog<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Github/" title="Github">Github<sup>2</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/Blog/" title="Blog">Blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Photo/" title="Photo">Photo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
 			
 		
 			
@@ -311,14 +313,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		
 			
 				<li><a href="/tags/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Photo/" title="Photo">Photo<sup>1</sup></a></li>
 			
 		
 			

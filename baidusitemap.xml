@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.baicharming.com/2017/07/12/mysql-commands/</loc>
-    <lastmod>2017-07-12T14:48:06.000Z</lastmod>
+    <lastmod>2017-07-12T15:00:09.000Z</lastmod>
     <data>
         <display>
         <title>MySQL常用命令</title>
@@ -74,9 +74,9 @@
         <title>Ubuntu下搭建本地Git服务器</title>
         <pubTime>2017-07-05T11:55:50.000Z</pubTime>
         
-        <tag>Ubuntu</tag>
-         
         <tag>Github</tag>
+         
+        <tag>Ubuntu</tag>
          
          
            
@@ -98,9 +98,9 @@
         
         <tag>Hexo</tag>
          
-        <tag>Blog</tag>
-         
         <tag>Github</tag>
+         
+        <tag>Blog</tag>
          
          
            
@@ -180,13 +180,13 @@
         <title>如何使用 Jacman 主题</title>
         <pubTime>2017-06-19T12:55:50.000Z</pubTime>
         
-        <tag>Jekyll</tag>
-         
         <tag>Hexo</tag>
          
-        <tag>Jacman</tag>
-         
         <tag>Blog</tag>
+         
+        <tag>Jekyll</tag>
+         
+        <tag>Jacman</tag>
          
          
            
