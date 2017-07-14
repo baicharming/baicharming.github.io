@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://www.baicharming.com/2017/07/05/frequently-used-commands/index.html">
 <meta property="og:site_name" content="小白博客">
 <meta property="og:description" content="好记性不如烂笔头，在此我记录一些我经常在Ubuntu系统下使用的命令。  安装PIP3  $ sudo apt-get install python3-pip   升级PIP3  $ sudo pip3 install pip --upgrade">
-<meta property="og:updated_time" content="2017-07-07T05:50:54.000Z">
+<meta property="og:updated_time" content="2017-07-14T01:54:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下自己常用命令">
 <meta name="twitter:description" content="好记性不如烂笔头，在此我记录一些我经常在Ubuntu系统下使用的命令。  安装PIP3  $ sudo apt-get install python3-pip   升级PIP3  $ sudo pip3 install pip --upgrade">
@@ -129,12 +129,12 @@
 </li>
 <li><p><strong>通过国内PIP镜像源安装第三方库</strong></p>
 <blockquote>
-<p>$ sudo pip3 install flask -i <a href="http://pypi.douban.com/simple" target="_blank" rel="external">http://pypi.douban.com/simple</a></p>
+<p>$ sudo pip3 install flask -i <a href="http://pypi.douban.com/simple/" target="_blank" rel="external">http://pypi.douban.com/simple/</a></p>
 </blockquote>
 </li>
 <li><p><strong>用apt-get安装常用工具</strong></p>
 <blockquote>
-<p>$ sudo apt-get install openssh-client openssh-server mysql-client-5.7 mysql-server-5.7  python3-mysql.connector gedit-plugins nautilus-open-terminal git emacs nginx axel</p>
+<p>$ sudo apt-get install openssh-client openssh-server mysql-client-5.7 mysql-server-5.7  python3-mysql.connector gedit-plugins git emacs nginx axel</p>
 </blockquote>
 </li>
 <li><p><strong>nose单元测试命令</strong></p>
@@ -145,6 +145,16 @@
 <li><p><strong>安装deb包命令</strong></p>
 <blockquote>
 <p>$ sudo dpkg -i packagename.deb<br>$ sudo apt-get -f install</p>
+</blockquote>
+</li>
+<li><p><strong>远程复制命令</strong></p>
+<blockquote>
+<p>$ scp -r foldername bai@192.168.1.112:/home/bai/<br>$ scp filename charming@192.168.1.100:/home/charming/</p>
+</blockquote>
+</li>
+<li><p><strong>远程登录命令</strong></p>
+<blockquote>
+<p>$ ssh bai@192.168.1.112</p>
 </blockquote>
 </li>
 <li><p><strong>设置静态IP</strong></p>
@@ -299,23 +309,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/Blog/" title="Blog">Blog<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Github/" title="Github">Github<sup>2</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/Blog/" title="Blog">Blog<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Nginx/" title="Nginx">Nginx<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/KVM/" title="KVM">KVM<sup>1</sup></a></li>
 			
 		
 			
@@ -327,7 +329,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/Nginx/" title="Nginx">Nginx<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/KVM/" title="KVM">KVM<sup>1</sup></a></li>
 			
 		
 			

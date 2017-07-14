@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
+    <lastmod>2017-07-14T01:54:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu下自己常用命令</title>
+        <pubTime>2017-07-05T09:55:50.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ubuntu" url="http://www.baicharming.com/categories/Ubuntu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.baicharming.com/2017/07/13/build-nginx/</loc>
     <lastmod>2017-07-13T03:46:47.000Z</lastmod>
     <data>
@@ -11,9 +31,9 @@
         <title>简单搭建Nginx服务器</title>
         <pubTime>2017-07-13T02:30:50.000Z</pubTime>
         
-        <tag>Nginx</tag>
-         
         <tag>Ubuntu</tag>
+         
+        <tag>Nginx</tag>
          
          
            
@@ -39,26 +59,6 @@
            
              
               <breadCrumb title="MySQL" url="http://www.baicharming.com/categories/MySQL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
-    <lastmod>2017-07-07T05:50:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu下自己常用命令</title>
-        <pubTime>2017-07-05T09:55:50.000Z</pubTime>
-        
-        <tag>Ubuntu</tag>
-         
-         
-           
-             
-              <breadCrumb title="Ubuntu" url="http://www.baicharming.com/categories/Ubuntu/"/>
           
         </display>
     </data>
@@ -96,9 +96,9 @@
         <title>Ubuntu下搭建本地Git服务器</title>
         <pubTime>2017-07-05T11:55:50.000Z</pubTime>
         
-        <tag>Github</tag>
-         
         <tag>Ubuntu</tag>
+         
+        <tag>Github</tag>
          
          
            
@@ -120,9 +120,9 @@
         
         <tag>Hexo</tag>
          
-        <tag>Github</tag>
-         
         <tag>Blog</tag>
+         
+        <tag>Github</tag>
          
          
            
@@ -202,13 +202,13 @@
         <title>如何使用 Jacman 主题</title>
         <pubTime>2017-06-19T12:55:50.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
-        <tag>Blog</tag>
-         
         <tag>Jekyll</tag>
          
+        <tag>Hexo</tag>
+         
         <tag>Jacman</tag>
+         
+        <tag>Blog</tag>
          
          
            
