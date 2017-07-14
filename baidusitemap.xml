@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
+    <lastmod>2017-07-14T10:04:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu下自己常用命令</title>
+        <pubTime>2017-07-05T09:55:50.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ubuntu" url="http://www.baicharming.com/categories/Ubuntu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.baicharming.com/2017/07/14/errors-solutions/</loc>
-    <lastmod>2017-07-14T09:53:23.000Z</lastmod>
+    <lastmod>2017-07-14T10:04:18.000Z</lastmod>
     <data>
         <display>
         <title>常见错误及解决方法</title>
@@ -19,26 +39,6 @@
            
              
               <breadCrumb title="Errors" url="http://www.baicharming.com/categories/Errors/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
-    <lastmod>2017-07-14T01:54:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu下自己常用命令</title>
-        <pubTime>2017-07-05T09:55:50.000Z</pubTime>
-        
-        <tag>Ubuntu</tag>
-         
-         
-           
-             
-              <breadCrumb title="Ubuntu" url="http://www.baicharming.com/categories/Ubuntu/"/>
           
         </display>
     </data>
@@ -118,9 +118,9 @@
         <title>Ubuntu下搭建本地Git服务器</title>
         <pubTime>2017-07-05T11:55:50.000Z</pubTime>
         
-        <tag>Ubuntu</tag>
-         
         <tag>Github</tag>
+         
+        <tag>Ubuntu</tag>
          
          
            
