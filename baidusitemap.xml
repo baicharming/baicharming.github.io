@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.baicharming.com/2017/07/14/errors-solutions/</loc>
-    <lastmod>2017-07-14T09:48:35.000Z</lastmod>
+    <lastmod>2017-07-14T09:53:23.000Z</lastmod>
     <data>
         <display>
         <title>常见错误及解决方法</title>
@@ -142,9 +142,9 @@
         
         <tag>Hexo</tag>
          
-        <tag>Blog</tag>
-         
         <tag>Github</tag>
+         
+        <tag>Blog</tag>
          
          
            
@@ -224,13 +224,13 @@
         <title>如何使用 Jacman 主题</title>
         <pubTime>2017-06-19T12:55:50.000Z</pubTime>
         
-        <tag>Jekyll</tag>
-         
         <tag>Hexo</tag>
          
-        <tag>Jacman</tag>
-         
         <tag>Blog</tag>
+         
+        <tag>Jekyll</tag>
+         
+        <tag>Jacman</tag>
          
          
            

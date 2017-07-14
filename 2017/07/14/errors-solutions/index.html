@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://www.baicharming.com/2017/07/14/errors-solutions/index.html">
 <meta property="og:site_name" content="小白博客">
 <meta property="og:description" content="错误提示：ImportError: No module named ‘sqlalchemy’ 错误分析：系统没有“sqlalchemy”这个模块导致导入错误，“sqlalchemy”是Python3的第三方库，用PIP3安装即可。举一反三，如果提示ImportError: No module named ‘flask’，解决方法类似。解决方法：sudo pip3 install sqlalche">
-<meta property="og:updated_time" content="2017-07-14T09:48:35.000Z">
+<meta property="og:updated_time" content="2017-07-14T09:53:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见错误及解决方法">
 <meta name="twitter:description" content="错误提示：ImportError: No module named ‘sqlalchemy’ 错误分析：系统没有“sqlalchemy”这个模块导致导入错误，“sqlalchemy”是Python3的第三方库，用PIP3安装即可。举一反三，如果提示ImportError: No module named ‘flask’，解决方法类似。解决方法：sudo pip3 install sqlalche">
@@ -104,7 +104,7 @@
 		
 		<ul>
 <li><strong>错误提示：ImportError: No module named ‘sqlalchemy’</strong><blockquote>
-<p>错误分析：系统没有“sqlalchemy”这个模块导致导入错误，“sqlalchemy”是Python3的第三方库，用PIP3安装即可。举一反三，如果提示ImportError: No module named ‘flask’，解决方法类似。<br>解决方法：sudo pip3 install sqlalchemy</p>
+<p><strong>错误分析</strong>：系统没有“sqlalchemy”这个模块导致导入错误，“sqlalchemy”是Python3的第三方库，用PIP3安装即可。举一反三，如果提示ImportError: No module named ‘flask’，解决方法类似。<br><strong>解决方法</strong>：sudo pip3 install sqlalchemy</p>
 </blockquote>
 </li>
 </ul>
@@ -112,52 +112,52 @@
 <ul>
 <li><p><strong>错误提示：SyntaxError: invalid syntax</strong></p>
 <blockquote>
-<p>错误分析：语法错误，往上看能找到提示语法错误的代码行，纠正其语法错误，此错误可以举一反三。<br>解决方法：找到对应的代码，纠正语法错误。</p>
+<p><strong>错误分析</strong>：语法错误，往上看能找到提示语法错误的代码行，纠正其语法错误，此错误可以举一反三。<br><strong>解决方法</strong>：找到对应的代码，纠正语法错误。</p>
 </blockquote>
 </li>
 <li><p><strong>错误提示：TabError: inconsistent use of tabs and spaces in indentation</strong></p>
 <blockquote>
-<p>错误分析：在缩进的地方使用tab键和space键不一致，在Python语法规范中，缩进必须是用tab键和space键中的一种，不能两者混合使用。<br>解决方法：找到对应代码，统一使用tab键或者space键。</p>
+<p><strong>错误分析</strong>：在缩进的地方使用tab键和space键不一致，在Python语法规范中，缩进必须是用tab键和space键中的一种，不能两者混合使用。<br><strong>解决方法</strong>：找到对应代码，统一使用tab键或者space键。</p>
 </blockquote>
 </li>
 <li><p><strong>错误提示：Access denied for user ‘root’@’localhost’ (using password: YES)</strong></p>
 <blockquote>
-<p>错误分析：拒绝访问MySQL数据库，是因为与MySQL数据库连接代码中，写入的root账户密码错误。<br>解决方法：应该在代码中正确写入MySQL的root账户密码。</p>
+<p><strong>错误分析</strong>：拒绝访问MySQL数据库，是因为与MySQL数据库连接代码中，写入的root账户密码错误。<br><strong>解决方法</strong>：应该在代码中正确写入MySQL的root账户密码。</p>
 </blockquote>
 </li>
 <li><p><strong>错误提示：Unknown database ‘Association’</strong></p>
 <blockquote>
-<p>错误分析：未知的数据库“Association”，应该在数据库里面创建一个名为“Association”的数据库，此错误可以举一反三。<br>解决方法：create database Association;</p>
+<p><strong>错误分析</strong>：未知的数据库“Association”，应该在数据库里面创建一个名为“Association”的数据库，此错误可以举一反三。<br><strong>解决方法</strong>：create database Association;</p>
 </blockquote>
 </li>
 <li><p><strong>错误提示：NameError: name ‘username’ is not defined</strong></p>
 <blockquote>
-<p>错误分析：’username’ 没有被定义，是因为在使用“username”之前没有定义这个变量，或者没有导入这个变量等情况，此错误可以举一反三。<br>解决方法：找到对应变量，在使用前进行定义。</p>
+<p><strong>错误分析</strong>：’username’ 没有被定义，是因为在使用“username”之前没有定义这个变量，或者没有导入这个变量等情况，此错误可以举一反三。<br><strong>解决方法</strong>：找到对应变量，在使用前进行定义。</p>
 </blockquote>
 </li>
 <li><p><strong>错误提示：AttributeError: ‘Userorml’ object has no attribute ‘getidbyname’</strong></p>
 <blockquote>
-<p>错误分析：’Userorml’ 对象没有分配’getidbyname’这个方法导致分配错误，在调用方法前必须先定义，或者先导入，此错误可以举一反三。<br>解决方法：找到未分配的方法，在调用之前进行定义或导入。</p>
+<p><strong>错误分析</strong>：’Userorml’ 对象没有分配’getidbyname’这个方法导致分配错误，在调用方法前必须先定义，或者先导入，此错误可以举一反三。<br><strong>解决方法</strong>：找到未分配的方法，在调用之前进行定义或导入。</p>
 </blockquote>
 </li>
 <li><p><strong>错误提示：TypeError: getidbyname() missing 1 required positional argument: ‘username’</strong></p>
 <blockquote>
-<p>错误分析：getidbyname()这个方法缺少一个’username’参数，应该补上对应参数，此错误可以举一反三。<br>解决方法：在调用getidbyname()方法时应加上缺少的参数。</p>
+<p><strong>错误分析</strong>：getidbyname()这个方法缺少一个’username’参数，应该补上对应参数，此错误可以举一反三。<br><strong>解决方法</strong>：在调用getidbyname()方法时应加上缺少的参数。</p>
 </blockquote>
 </li>
 <li><p><strong>错误提示：TypeError: a bytes-like object is required, not ‘str’</strong></p>
 <blockquote>
-<p>错误分析：类型错误：需要一个字节的对象，而不是字符串，这一般是在跟MySQL数据库连接的时候出现的错误，MySQL数据库用的是gbk编码，而项目数据库用的是utf-8编码。<br>解决方法：修改orml文件夹下的dbbase.py文件中的 use_unicode，将 use_unicode=0改成 use_unicode=1，或者将 use_unicode=0删除。</p>
+<p><strong>错误分析</strong>：类型错误：需要一个字节的对象，而不是字符串，这一般是在跟MySQL数据库连接的时候出现的错误，MySQL数据库用的是gbk编码，而项目数据库用的是utf-8编码。<br><strong>解决方法</strong>：修改orml文件夹下的dbbase.py文件中的 use_unicode，将 use_unicode=0改成 use_unicode=1，或者将 use_unicode=0删除。</p>
 </blockquote>
 </li>
 <li><p><strong>错误提示：TypeError: b’Tom’ is not JSON serializable</strong></p>
 <blockquote>
-<p>错误分析：通过sqlalchemy查询出来的数据Tom是字节类型，而不是JSON序列，需要将其解码成utf-8类型。<br>解决方法： b’Tom’ .decode(“utf-8”)</p>
+<p><strong>错误分析</strong>：通过sqlalchemy查询出来的数据Tom是字节类型，而不是JSON序列，需要将其解码成utf-8类型。<br><strong>解决方法</strong>： b’Tom’ .decode(“utf-8”)</p>
 </blockquote>
 </li>
 <li><p><strong>错误提示：OSError: [Errno 99] Cannot assign requested address</strong></p>
 <blockquote>
-<p>错误分析：不能分配请求地址，是因为在后端全局配置文件中，服务IP地址不是本机地址，应填写本机IP地址。<br>解决方法：通过ifconfig命令查看本机IP地址，将其写入后端服务IP地址。</p>
+<p><strong>错误分析</strong>：不能分配请求地址，是因为在后端全局配置文件中，服务IP地址不是本机地址，应填写本机IP地址。<br><strong>解决方法</strong>：通过ifconfig命令查看本机IP地址，将其写入后端服务IP地址。</p>
 </blockquote>
 </li>
 </ul>
@@ -298,15 +298,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Blog/" title="Blog">Blog<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>2</sup></a></li>
 			
 		
 			
@@ -314,11 +310,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Solutions/" title="Solutions">Solutions<sup>1</sup></a></li>
+				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
 			
 		
 			
@@ -326,15 +318,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/Solutions/" title="Solutions">Solutions<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Jekyll/" title="Jekyll">Jekyll<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/KVM/" title="KVM">KVM<sup>1</sup></a></li>
+				<li><a href="/tags/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
 			
 		
 			
@@ -342,7 +334,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
+				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Photo/" title="Photo">Photo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/KVM/" title="KVM">KVM<sup>1</sup></a></li>
 			
 		
 		</ul>
