@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>MySQL常用命令 | 小白博客</title>
+    <title>常见错误及解决方法 | 小白博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="baicharming">
     
 
     
-    <meta name="description" content="MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件。 MySQL安装这里我只介绍在Ubuntu16.04下安装MySQL5.7的方法，命令如下，在安装的过程中会提示你输入root账户">
-<meta name="keywords" content="MySQL">
+    <meta name="description" content="错误提示：ImportError: No module named ‘sqlalchemy’ 错误分析：系统没有“sqlalchemy”这个模块导致导入错误，“sqlalchemy”是Python3的第三方库，用PIP3安装即可。举一反三，如果提示ImportError: No module named ‘flask’，解决方法类似。解决方法：sudo pip3 install sqlalche">
+<meta name="keywords" content="Errors,Solutions">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL常用命令">
-<meta property="og:url" content="http://www.baicharming.com/2017/07/12/mysql-commands/index.html">
+<meta property="og:title" content="常见错误及解决方法">
+<meta property="og:url" content="http://www.baicharming.com/2017/07/14/errors-solutions/index.html">
 <meta property="og:site_name" content="小白博客">
-<meta property="og:description" content="MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件。 MySQL安装这里我只介绍在Ubuntu16.04下安装MySQL5.7的方法，命令如下，在安装的过程中会提示你输入root账户">
-<meta property="og:updated_time" content="2017-07-12T15:00:09.000Z">
+<meta property="og:description" content="错误提示：ImportError: No module named ‘sqlalchemy’ 错误分析：系统没有“sqlalchemy”这个模块导致导入错误，“sqlalchemy”是Python3的第三方库，用PIP3安装即可。举一反三，如果提示ImportError: No module named ‘flask’，解决方法类似。解决方法：sudo pip3 install sqlalche">
+<meta property="og:updated_time" content="2017-07-14T09:48:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL常用命令">
-<meta name="twitter:description" content="MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 Oracle 旗下产品。在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件。 MySQL安装这里我只介绍在Ubuntu16.04下安装MySQL5.7的方法，命令如下，在安装的过程中会提示你输入root账户">
+<meta name="twitter:title" content="常见错误及解决方法">
+<meta name="twitter:description" content="错误提示：ImportError: No module named ‘sqlalchemy’ 错误分析：系统没有“sqlalchemy”这个模块导致导入错误，“sqlalchemy”是Python3的第三方库，用PIP3安装即可。举一反三，如果提示ImportError: No module named ‘flask’，解决方法类似。解决方法：sudo pip3 install sqlalche">
 
     
     
@@ -82,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/07/12/mysql-commands/" title="MySQL常用命令" itemprop="url">MySQL常用命令</a>
+      <a href="/2017/07/14/errors-solutions/" title="常见错误及解决方法" itemprop="url">常见错误及解决方法</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="baicharming" target="_blank" itemprop="author">baicharming</a>
 		
   <p class="article-time">
-    <time datetime="2017-07-12T14:30:50.000Z" itemprop="datePublished"> 发表于 2017-07-12</time>
+    <time datetime="2017-07-14T09:55:50.000Z" itemprop="datePublished"> 发表于 2017-07-14</time>
     
   </p>
 </header>
@@ -98,63 +98,69 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL安装"><span class="toc-number">1.</span> <span class="toc-text">MySQL安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL进入与退出"><span class="toc-number">2.</span> <span class="toc-text">MySQL进入与退出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL数据库操作"><span class="toc-number">3.</span> <span class="toc-text">MySQL数据库操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL表操作"><span class="toc-number">4.</span> <span class="toc-text">MySQL表操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL导出与导入"><span class="toc-number">5.</span> <span class="toc-text">MySQL导出与导入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-Workbench"><span class="toc-number">6.</span> <span class="toc-text">MySQL Workbench</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p><a href="https://www.mysql.com/" target="_blank" rel="external">MySQL</a>是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，目前属于 <a href="https://www.oracle.com" target="_blank" rel="external">Oracle</a> 旗下产品。在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件。</p>
-<h2 id="MySQL安装"><a href="#MySQL安装" class="headerlink" title="MySQL安装"></a>MySQL安装</h2><p>这里我只介绍在Ubuntu16.04下安装MySQL5.7的方法，命令如下，在安装的过程中会提示你输入root账户的密码和确认密码，我一般将密码设置为root。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install mysql-client-5.7 mysql-server-5.7</div></pre></td></tr></table></figure></p>
+		<ul>
+<li><strong>错误提示：ImportError: No module named ‘sqlalchemy’</strong><blockquote>
+<p>错误分析：系统没有“sqlalchemy”这个模块导致导入错误，“sqlalchemy”是Python3的第三方库，用PIP3安装即可。举一反三，如果提示ImportError: No module named ‘flask’，解决方法类似。<br>解决方法：sudo pip3 install sqlalchemy</p>
+</blockquote>
+</li>
+</ul>
 <a id="more"></a>
-<h2 id="MySQL进入与退出"><a href="#MySQL进入与退出" class="headerlink" title="MySQL进入与退出"></a>MySQL进入与退出</h2><p>MySQL安装好之后，在终端输入以下命令，然后回车输入root账户密码，若终端出现<code>mysql &gt;</code>，表示成功进入MySQL。退出MySQL可以用<code>exit</code>、<code>quit</code>或<code>Crtl+D</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql -u root -p</div></pre></td></tr></table></figure></p>
-<h2 id="MySQL数据库操作"><a href="#MySQL数据库操作" class="headerlink" title="MySQL数据库操作"></a>MySQL数据库操作</h2><ul>
-<li><p><strong>创建数据库</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">命令：create database &lt;数据库名&gt;;</div><div class="line">例如：创建一个名称为Charming的数据库</div><div class="line">mysql &gt; create database Charming;</div></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>错误提示：SyntaxError: invalid syntax</strong></p>
+<blockquote>
+<p>错误分析：语法错误，往上看能找到提示语法错误的代码行，纠正其语法错误，此错误可以举一反三。<br>解决方法：找到对应的代码，纠正语法错误。</p>
+</blockquote>
 </li>
-<li><p><strong>显示数据库</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：show databases;</div></pre></td></tr></table></figure>
+<li><p><strong>错误提示：TabError: inconsistent use of tabs and spaces in indentation</strong></p>
+<blockquote>
+<p>错误分析：在缩进的地方使用tab键和space键不一致，在Python语法规范中，缩进必须是用tab键和space键中的一种，不能两者混合使用。<br>解决方法：找到对应代码，统一使用tab键或者space键。</p>
+</blockquote>
 </li>
-<li><p><strong>删除数据库</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：drop database &lt;数据库名&gt;;</div></pre></td></tr></table></figure>
+<li><p><strong>错误提示：Access denied for user ‘root’@’localhost’ (using password: YES)</strong></p>
+<blockquote>
+<p>错误分析：拒绝访问MySQL数据库，是因为与MySQL数据库连接代码中，写入的root账户密码错误。<br>解决方法：应该在代码中正确写入MySQL的root账户密码。</p>
+</blockquote>
 </li>
-<li><p><strong>连接数据库</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：use &lt;数据库名&gt;;</div></pre></td></tr></table></figure>
+<li><p><strong>错误提示：Unknown database ‘Association’</strong></p>
+<blockquote>
+<p>错误分析：未知的数据库“Association”，应该在数据库里面创建一个名为“Association”的数据库，此错误可以举一反三。<br>解决方法：create database Association;</p>
+</blockquote>
+</li>
+<li><p><strong>错误提示：NameError: name ‘username’ is not defined</strong></p>
+<blockquote>
+<p>错误分析：’username’ 没有被定义，是因为在使用“username”之前没有定义这个变量，或者没有导入这个变量等情况，此错误可以举一反三。<br>解决方法：找到对应变量，在使用前进行定义。</p>
+</blockquote>
+</li>
+<li><p><strong>错误提示：AttributeError: ‘Userorml’ object has no attribute ‘getidbyname’</strong></p>
+<blockquote>
+<p>错误分析：’Userorml’ 对象没有分配’getidbyname’这个方法导致分配错误，在调用方法前必须先定义，或者先导入，此错误可以举一反三。<br>解决方法：找到未分配的方法，在调用之前进行定义或导入。</p>
+</blockquote>
+</li>
+<li><p><strong>错误提示：TypeError: getidbyname() missing 1 required positional argument: ‘username’</strong></p>
+<blockquote>
+<p>错误分析：getidbyname()这个方法缺少一个’username’参数，应该补上对应参数，此错误可以举一反三。<br>解决方法：在调用getidbyname()方法时应加上缺少的参数。</p>
+</blockquote>
+</li>
+<li><p><strong>错误提示：TypeError: a bytes-like object is required, not ‘str’</strong></p>
+<blockquote>
+<p>错误分析：类型错误：需要一个字节的对象，而不是字符串，这一般是在跟MySQL数据库连接的时候出现的错误，MySQL数据库用的是gbk编码，而项目数据库用的是utf-8编码。<br>解决方法：修改orml文件夹下的dbbase.py文件中的 use_unicode，将 use_unicode=0改成 use_unicode=1，或者将 use_unicode=0删除。</p>
+</blockquote>
+</li>
+<li><p><strong>错误提示：TypeError: b’Tom’ is not JSON serializable</strong></p>
+<blockquote>
+<p>错误分析：通过sqlalchemy查询出来的数据Tom是字节类型，而不是JSON序列，需要将其解码成utf-8类型。<br>解决方法： b’Tom’ .decode(“utf-8”)</p>
+</blockquote>
+</li>
+<li><p><strong>错误提示：OSError: [Errno 99] Cannot assign requested address</strong></p>
+<blockquote>
+<p>错误分析：不能分配请求地址，是因为在后端全局配置文件中，服务IP地址不是本机地址，应填写本机IP地址。<br>解决方法：通过ifconfig命令查看本机IP地址，将其写入后端服务IP地址。</p>
+</blockquote>
 </li>
 </ul>
-<h2 id="MySQL表操作"><a href="#MySQL表操作" class="headerlink" title="MySQL表操作"></a>MySQL表操作</h2><ul>
-<li><p><strong>显示所有表</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：show tables;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>获取表结构</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">命令：describe &lt;表名&gt;;</div><div class="line">例如：获取user这个表的表结构，有user_id、user_name、user_password三个字段。</div><div class="line">mysql &gt; describe user;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>删除一个表</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：drop table &lt;表名&gt;;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>插入数据</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">命令：insert into &lt;表名&gt; [( &lt;字段名1&gt;[,..&lt;字段名n&gt; ])] values (值1)[, (值n)];</div><div class="line">例如：往user表中追加一条数据。</div><div class="line">mysql &gt; insert into user values (1,&quot;jun&quot;,&quot;123456pwd&quot;);</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>查询数据</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">命令：select &lt;字段1，字段2，...&gt; from &lt;表名&gt; where &lt;表达式&gt;;</div><div class="line">例如：查询user表中的所有数据。</div><div class="line">mysql &gt; select * from user;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>删除数据</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">命令：delete from &lt;表名&gt; where &lt;表达式&gt;;</div><div class="line">例如：删除user表中user_id=1的数据。</div><div class="line">mysql &gt; delete from user where user_id=1;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>更新数据</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">命令：update &lt;表名&gt; set 字段=新值,… where &lt;表达式&gt;;</div><div class="line">例如：更新user表中user_id=1的这条数据的user_password字段。</div><div class="line">mysql &gt; update user set user_password=&quot;1234567890&quot; where user_id=1;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="MySQL导出与导入"><a href="#MySQL导出与导入" class="headerlink" title="MySQL导出与导入"></a>MySQL导出与导入</h2><ul>
-<li><p><strong>导出数据库</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">命令：mysqldump -u root -p 数据库名 &gt; 导出的文件名</div><div class="line">例如：将数据库Charming导出，文件放在/home/bai/目录下的charming.sql文件。</div><div class="line">$ mysqldump -u root -p Charming &gt; /home/bai/charming.sql</div><div class="line">$ Enter password: root</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>导出一个表</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：mysqldump -u root -p 数据库名 表名&gt; 导出的文件名</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>导入数据库</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">####第一种方法：</div><div class="line">$ mysql -u root -p</div><div class="line">$ Enter password: root</div><div class="line">mysql &gt; use 数据库名</div><div class="line">mysql &gt; source /home/bai/charming.sql;</div><div class="line">####第二种方法：</div><div class="line">$ mysqldump -u root -p 数据库名 &lt; 导出的文件名</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="MySQL-Workbench"><a href="#MySQL-Workbench" class="headerlink" title="MySQL Workbench"></a>MySQL Workbench</h2><p><a href="https://www.mysql.com/products/workbench/" target="_blank" rel="external">MySQL Workbench</a>是一个数据库架构师、开发人员和数据库管理员统一的视觉工具。MySQL Workbench提供数据建模、SQL开发和综合管理工具，用于服务器配置、用户管理、备份等等。MySQL Workbench可在Windows、Linux和Mac OS X.上使用。详情请看<a href="https://www.mysql.com/products/workbench/" target="_blank" rel="external">https://www.mysql.com/products/workbench/</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -162,13 +168,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+  <a class="article-category-link" href="/categories/Errors/">Errors</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/MySQL/">MySQL</a>
+  <span></span> <a href="/tags/Errors/">Errors</a><a href="/tags/Solutions/">Solutions</a>
   </div>
 
 </div>
@@ -177,7 +183,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.baicharming.com/2017/07/12/mysql-commands/" data-title="MySQL常用命令 | 小白博客" data-tsina="2771721881" class="share clearfix">
+	  <div data-url="http://www.baicharming.com/2017/07/14/errors-solutions/" data-title="常见错误及解决方法 | 小白博客" data-tsina="2771721881" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -191,19 +197,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/07/13/build-nginx/" title="简单搭建Nginx服务器">
-  <strong>上一篇：</strong><br/>
-  <span>
-  简单搭建Nginx服务器</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/07/05/ubuntu-build-git-server/"  title="Ubuntu下搭建本地Git服务器">
+<a href="/2017/07/13/build-nginx/"  title="简单搭建Nginx服务器">
  <strong>下一篇：</strong><br/> 
- <span>Ubuntu下搭建本地Git服务器
+ <span>简单搭建Nginx服务器
 </span>
 </a>
 </div>
@@ -211,7 +209,7 @@
 </nav>
 
 	
-<section id="comments">  <div id="SOHUCS" sid="MySQL常用命令"></div> <script type="text/javascript"> 
+<section id="comments">  <div id="SOHUCS" sid="常见错误及解决方法"></div> <script type="text/javascript"> 
 (function(){ 
 var appid = 'cyt4r5urz'; 
 var conf = 'prod_d4c78aa306c5f0779d60e2fbe3627e81'; 
@@ -228,7 +226,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL安装"><span class="toc-number">1.</span> <span class="toc-text">MySQL安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL进入与退出"><span class="toc-number">2.</span> <span class="toc-text">MySQL进入与退出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL数据库操作"><span class="toc-number">3.</span> <span class="toc-text">MySQL数据库操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL表操作"><span class="toc-number">4.</span> <span class="toc-text">MySQL表操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL导出与导入"><span class="toc-number">5.</span> <span class="toc-text">MySQL导出与导入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-Workbench"><span class="toc-number">6.</span> <span class="toc-text">MySQL Workbench</span></a></li></ol>
+ 
  
   </div>
 
