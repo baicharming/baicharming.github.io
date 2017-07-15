@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-sogou/</loc>
+    
+    <lastmod>2017-07-15T12:55:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/</loc>
+    
+    <lastmod>2017-07-15T12:55:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/ubuntu-build-git-server/</loc>
+    
+    <lastmod>2017-07-15T12:54:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/12/mysql-commands/</loc>
+    
+    <lastmod>2017-07-15T12:54:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
+    
+    <lastmod>2017-07-15T12:54:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/14/errors-solutions/</loc>
+    
+    <lastmod>2017-07-15T12:54:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/13/build-nginx/</loc>
+    
+    <lastmod>2017-07-15T12:54:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baicharming.com/2017/06/23/what-is-markdown/</loc>
     
     <lastmod>2017-07-15T12:48:05.000Z</lastmod>
@@ -33,55 +82,6 @@
     <loc>http://www.baicharming.com/2017/06/24/build-blog-with-hexo-github/</loc>
     
     <lastmod>2017-07-15T12:47:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-sogou/</loc>
-    
-    <lastmod>2017-07-15T12:43:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/</loc>
-    
-    <lastmod>2017-07-15T12:43:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/ubuntu-build-git-server/</loc>
-    
-    <lastmod>2017-07-15T12:43:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/12/mysql-commands/</loc>
-    
-    <lastmod>2017-07-15T12:42:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
-    
-    <lastmod>2017-07-15T12:42:26.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/14/errors-solutions/</loc>
-    
-    <lastmod>2017-07-15T12:42:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/13/build-nginx/</loc>
-    
-    <lastmod>2017-07-15T12:41:55.000Z</lastmod>
     
   </url>
   
