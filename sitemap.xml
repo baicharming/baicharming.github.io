@@ -2,30 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
+    <loc>http://www.baicharming.com/2017/06/23/what-is-markdown/</loc>
     
-    <lastmod>2017-07-14T10:04:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/14/errors-solutions/</loc>
-    
-    <lastmod>2017-07-14T10:04:18.000Z</lastmod>
+    <lastmod>2017-07-15T12:48:05.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.baicharming.com/2017/07/13/build-nginx/</loc>
+    <loc>http://www.baicharming.com/2017/06/19/how-to-use-jacman/</loc>
     
-    <lastmod>2017-07-13T03:46:47.000Z</lastmod>
+    <lastmod>2017-07-15T12:47:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/06/23/markdown-grammar/</loc>
+    
+    <lastmod>2017-07-15T12:47:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/06/19/gallery-post/</loc>
+    
+    <lastmod>2017-07-15T12:47:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/06/24/build-blog-with-hexo-github/</loc>
+    
+    <lastmod>2017-07-15T12:47:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-sogou/</loc>
+    
+    <lastmod>2017-07-15T12:43:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/</loc>
+    
+    <lastmod>2017-07-15T12:43:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/ubuntu-build-git-server/</loc>
+    
+    <lastmod>2017-07-15T12:43:20.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.baicharming.com/2017/07/12/mysql-commands/</loc>
     
-    <lastmod>2017-07-12T15:00:09.000Z</lastmod>
+    <lastmod>2017-07-15T12:42:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/05/frequently-used-commands/</loc>
+    
+    <lastmod>2017-07-15T12:42:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/14/errors-solutions/</loc>
+    
+    <lastmod>2017-07-15T12:42:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/2017/07/13/build-nginx/</loc>
+    
+    <lastmod>2017-07-15T12:41:55.000Z</lastmod>
     
   </url>
   
@@ -33,62 +89,6 @@
     <loc>http://www.baicharming.com/google8d77c6e2f1e40a3d.html</loc>
     
     <lastmod>2017-07-06T02:52:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-kvm/</loc>
-    
-    <lastmod>2017-07-05T13:07:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/ubuntu-build-git-server/</loc>
-    
-    <lastmod>2017-07-05T13:05:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/06/24/build-blog-with-hexo-github/</loc>
-    
-    <lastmod>2017-07-05T13:05:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/06/23/markdown-grammar/</loc>
-    
-    <lastmod>2017-07-05T08:56:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-sogou/</loc>
-    
-    <lastmod>2017-07-05T08:49:22.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/06/23/what-is-markdown/</loc>
-    
-    <lastmod>2017-06-24T08:07:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/06/19/how-to-use-jacman/</loc>
-    
-    <lastmod>2017-06-24T08:05:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/2017/06/19/gallery-post/</loc>
-    
-    <lastmod>2017-06-24T07:44:00.000Z</lastmod>
     
   </url>
   
