@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baicharming.com/2018/05/10/test-article/</loc>
+    
+    <lastmod>2018-05-10T14:54:55.383Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baicharming.com/about/index.html</loc>
+    
+    <lastmod>2018-05-10T11:38:10.176Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baicharming.com/2017/07/05/ubuntu-install-sogou/</loc>
     
     <lastmod>2017-07-15T12:55:09.000Z</lastmod>
@@ -93,13 +107,6 @@
   </url>
   
   <url>
-    <loc>http://www.baicharming.com/about/index.html</loc>
-    
-    <lastmod>2017-06-19T13:33:22.311Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.baicharming.com/tags/index.html</loc>
     
     <lastmod>2017-06-19T04:26:03.523Z</lastmod>
@@ -117,13 +124,6 @@
     <loc>http://www.baicharming.com/categories/index.html</loc>
     
     <lastmod>2017-06-19T04:25:39.566Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baicharming.com/baby/index.html</loc>
-    
-    <lastmod>2017-06-19T04:25:26.484Z</lastmod>
     
   </url>
   
