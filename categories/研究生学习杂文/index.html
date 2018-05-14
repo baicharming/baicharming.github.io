@@ -63,10 +63,9 @@
 					
 					<li>
  					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="谷歌搜索" />
-						<input type="hidden" name="q" value="site:www.baicharming.com">
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="谷歌搜索" />
 					</form>
 					
 					</li>
@@ -388,21 +387,6 @@ $(document).ready(function(){
 })();
 </script>
 
-<div  id="main" class="page">
-  <div id='cse' style='width:100%;text-align:center'>正在加载搜索结果，请稍等。</div>
-<script>
-  (function() {
-    var cx = '002526563814241302031:wme8ag-1yny';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-</div>
 
     </body>
    </html>
