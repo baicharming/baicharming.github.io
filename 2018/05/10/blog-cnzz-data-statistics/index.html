@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://www.baicharming.com/img/blog-cnzz-data-statistics/add-site.png">
 <meta property="og:image" content="http://www.baicharming.com/img/blog-cnzz-data-statistics/cnzz-style-show.png">
 <meta property="og:image" content="http://www.baicharming.com/img/blog-cnzz-data-statistics/statistics-show.png">
-<meta property="og:updated_time" content="2018-05-12T23:21:49.000Z">
+<meta property="og:updated_time" content="2018-05-13T23:19:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客使用CNZZ站长统计">
 <meta name="twitter:description" content="CNZZ是由国际著名风险投资商IDG投资的网络技术服务公司，是中国互联网目前最有影响力的流量统计网站。作为CNZZ老字号产品，站长统计是一款永久免费、安全、可靠、公正的第三方网站流量统计分析系统，帮助站长实时了解网站被访问情况、进行网站运营分析，已成为目前国内站长使用最多的网站流量统计工具。">
@@ -117,7 +117,7 @@
 <p>在“站点管理”界面点击“添加站点”，进入如下图界面，录入站点相关信息。</p>
 <p><img src="/img/blog-cnzz-data-statistics/add-site.png" alt="添加站点"></p>
 <h2 id="获取代码并添加至网页中"><a href="#获取代码并添加至网页中" class="headerlink" title="获取代码并添加至网页中"></a>获取代码并添加至网页中</h2><p>站点添加成功后，在“站点管理”界面点击“统计代码”，可以看到很多样式，根据自己喜好进行选择，本人选择“横排数据显示”样式，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">var cnzz_protocol = ((&quot;https:&quot; == document.location.protocol) ? &quot; https://&quot; : &quot; http://&quot;);</div><div class="line">document.write(unescape(&quot;%3Cspan id=&apos;cnzz_stat_icon_1262408921&apos;%3E%3C/span%3E%3Cscript src=&apos;&quot; + cnzz_protocol + &quot;s13.cnzz.com/z_stat.php%3Fid%3D1262408921%26online%3D1%26show%3Dline&apos; type=&apos;text/javascript&apos;%3E%3C/script%3E&quot;));</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>然后将对应的代码粘贴至您网站所有页面的<code>&lt;/body&gt;</code>前，添加成功后立即开始统计。下面以<a href="www.baicharming.com">小白博客</a>为例，介绍代码如何添加至网页中。</p>
+<p>然后将对应的代码粘贴至您网站所有页面的<code>&lt;/body&gt;</code>前，添加成功后立即开始统计。下面以<a href="http://www.baicharming.com/">小白博客</a>为例，介绍代码如何添加至网页中。</p>
 <p>小白博客使用<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>进行搭建，主题选择<a href="https://github.com/wuchong/jacman" target="_blank" rel="external">Jacman</a>。首先在Jacman主题的<code>_config.yml</code>文件中启用<code>cnzz_tongji</code>，如下所示，其中<code>siteid</code>可以通过上述代码查看，我的<code>siteid</code>为<code>1262408921</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cnzz_tongji:</div><div class="line">  enable: true</div><div class="line">  siteid: 1262408921</div></pre></td></tr></table></figure></p>
 <p>然后找到<code>jacman&gt;layout&gt;_partial&gt;after_footer.ejs</code>文件，在最后增加“横排数据显示”样式代码即可。至此，CNZZ站长统计已搭建完成，小白博客的显示效果如下图所示。</p>
 <p><img src="/img/blog-cnzz-data-statistics/cnzz-style-show.png" alt="小白博客的CNZZ站长统计"></p>
@@ -236,11 +236,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/Blog/" title="Blog">Blog<sup>5</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Ubuntu/" title="Ubuntu">Ubuntu<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Blog/" title="Blog">Blog<sup>5</sup></a></li>
+				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
 			
 		
 			
@@ -252,19 +256,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Nginx/" title="Nginx">Nginx<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Baidu/" title="Baidu">Baidu<sup>1</sup></a></li>
 			
 		
 			
@@ -272,7 +264,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/Photo/" title="Photo">Photo<sup>1</sup></a></li>
+				<li><a href="/tags/Baidu/" title="Baidu">Baidu<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
 			
 		
 			
@@ -280,11 +276,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
+				<li><a href="/tags/Google/" title="Google">Google<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Google/" title="Google">Google<sup>1</sup></a></li>
+				<li><a href="/tags/Photo/" title="Photo">Photo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
 			
 		
 			

@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://www.baicharming.com/img/blog-changyan-comment/site-list.png">
 <meta property="og:image" content="http://www.baicharming.com/img/blog-changyan-comment/changyan-use-effect.png">
 <meta property="og:image" content="http://www.baicharming.com/img/blog-changyan-comment/show-comment-number.png">
-<meta property="og:updated_time" content="2018-05-12T23:21:51.000Z">
+<meta property="og:updated_time" content="2018-05-13T23:18:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客使用畅言评论">
 <meta name="twitter:description" content="畅言是业内领先的社会化评论系统，支持PC和移动端两种接入方式，为网站提供了一种全新的评论方式。畅言作为新一代的评论系统，免费为广大合作网站提供安全可靠的服务，但畅言保留可能的增值服务收费权利。 畅言在业内率先实现三重过滤机制。当评论数据产生后，首先经过搜狐垃圾过滤系统，防灌水、防垃圾、防广告；然后经过官方提供违禁词库和站长自定义的敏感词过滤；最后是网站的自主审核，所有畅言合作网站都有专属的管理后台">
@@ -117,7 +117,7 @@
 <p><img src="/img/blog-changyan-comment/add-site.png" alt="添加站点"></p>
 <p>站点添加成功后，在“账号管理”的”管理站点”中能够看到站点的<code>appid</code>，<code>appid</code>在后续的操作中会用到，用于唯一标识该站点。小白博客的<code>appid</code>为<code>cyt4r5urz</code>，如下图所示。</p>
 <p><img src="/img/blog-changyan-comment/site-list.png" alt="站点列表"></p>
-<h2 id="安装畅言评论"><a href="#安装畅言评论" class="headerlink" title="安装畅言评论"></a>安装畅言评论</h2><p>在“安装畅言”中，选择“通用代码安装”，分别显示了PC端安装代码、WAP端安装代码和自适应安装代码，<a href="www.baicharming.com">小白博客</a>选择了《自适应安装代码》，代码如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;SOHUCS&quot; sid=&quot;请将此处替换为配置SourceID的语句&quot; &gt;&lt;/div&gt; </div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">(function()&#123; </div><div class="line">var appid = &apos;cyt4r5urz&apos;; </div><div class="line">var conf = &apos;prod_d4c78aa306c5f0779d60e2fbe3627e81&apos;; </div><div class="line">var width = window.innerWidth || document.documentElement.clientWidth; </div><div class="line">if (width &lt; 960) &#123; </div><div class="line">window.document.write(&apos;&lt;script id=&quot;changyan_mobile_js&quot; charset=&quot;utf-8&quot; type=&quot;text/javascript&quot; src=&quot;https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=&apos; + appid + &apos;&amp;conf=&apos; + conf + &apos;&quot;&gt;&lt;\/script&gt;&apos;); &#125; else &#123; var loadJs=function(d,a)&#123;var c=document.getElementsByTagName(&quot;head&quot;)[0]||document.head||document.documentElement;var b=document.createElement(&quot;script&quot;);b.setAttribute(&quot;type&quot;,&quot;text/javascript&quot;);b.setAttribute(&quot;charset&quot;,&quot;UTF-8&quot;);b.setAttribute(&quot;src&quot;,d);if(typeof a===&quot;function&quot;)&#123;if(window.attachEvent)&#123;b.onreadystatechange=function()&#123;var e=b.readyState;if(e===&quot;loaded&quot;||e===&quot;complete&quot;)&#123;b.onreadystatechange=null;a()&#125;&#125;&#125;else&#123;b.onload=a&#125;&#125;c.appendChild(b)&#125;;loadJs(&quot;https://changyan.sohu.com/upload/changyan.js&quot;,function()&#123;window.changyan.api.config(&#123;appid:appid,conf:conf&#125;)&#125;); &#125; &#125;)(); </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="安装畅言评论"><a href="#安装畅言评论" class="headerlink" title="安装畅言评论"></a>安装畅言评论</h2><p>在“安装畅言”中，选择“通用代码安装”，分别显示了PC端安装代码、WAP端安装代码和自适应安装代码，<a href="http://www.baicharming.com/">小白博客</a>选择了《自适应安装代码》，代码如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;SOHUCS&quot; sid=&quot;请将此处替换为配置SourceID的语句&quot; &gt;&lt;/div&gt; </div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">(function()&#123; </div><div class="line">var appid = &apos;cyt4r5urz&apos;; </div><div class="line">var conf = &apos;prod_d4c78aa306c5f0779d60e2fbe3627e81&apos;; </div><div class="line">var width = window.innerWidth || document.documentElement.clientWidth; </div><div class="line">if (width &lt; 960) &#123; </div><div class="line">window.document.write(&apos;&lt;script id=&quot;changyan_mobile_js&quot; charset=&quot;utf-8&quot; type=&quot;text/javascript&quot; src=&quot;https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=&apos; + appid + &apos;&amp;conf=&apos; + conf + &apos;&quot;&gt;&lt;\/script&gt;&apos;); &#125; else &#123; var loadJs=function(d,a)&#123;var c=document.getElementsByTagName(&quot;head&quot;)[0]||document.head||document.documentElement;var b=document.createElement(&quot;script&quot;);b.setAttribute(&quot;type&quot;,&quot;text/javascript&quot;);b.setAttribute(&quot;charset&quot;,&quot;UTF-8&quot;);b.setAttribute(&quot;src&quot;,d);if(typeof a===&quot;function&quot;)&#123;if(window.attachEvent)&#123;b.onreadystatechange=function()&#123;var e=b.readyState;if(e===&quot;loaded&quot;||e===&quot;complete&quot;)&#123;b.onreadystatechange=null;a()&#125;&#125;&#125;else&#123;b.onload=a&#125;&#125;c.appendChild(b)&#125;;loadJs(&quot;https://changyan.sohu.com/upload/changyan.js&quot;,function()&#123;window.changyan.api.config(&#123;appid:appid,conf:conf&#125;)&#125;); &#125; &#125;)(); </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <p>然后复制以上代码，并粘贴到您网页源代码的<code>&lt;body&gt;</code>与<code>&lt;/body&gt;</code>之间想要出现畅言评论框的位置。如果您的网站使用了模板，请将代码粘贴到模板代码中。小白博客使用<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>的<a href="https://github.com/wuchong/jacman" target="_blank" rel="external">Jacman</a>主题进行搭建的，找到<code>jacman&gt;layout&gt;_partial&gt;post&gt;comment.ejs</code>文件，将自适应安装代码存放于该文件，并且将代码中<code>sid</code>的值修改为<code>&lt;%= page.title %&gt;</code>。小白博客使用畅言评论的效果如下图所示。</p>
 <p><img src="/img/blog-changyan-comment/changyan-use-effect.png" alt="小白博客使用畅言评论"></p>
 <p>最后，你可以在“安装畅言”中选择“获取评论数代码”，小白博客选择了《2.1 在不含有畅言评论框代码的页面（列表页、目录页等）添加评论数》，代码如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;span id = &quot;sourceId::此处替换为配置SourceID的语句&quot; class = &quot;cy_cmt_count&quot; &gt;&lt;/span&gt;</div><div class="line">&lt;script id=&quot;cy_cmt_num&quot; src=&quot;https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4r5urz&quot;&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
@@ -237,11 +237,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/Blog/" title="Blog">Blog<sup>5</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Ubuntu/" title="Ubuntu">Ubuntu<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Blog/" title="Blog">Blog<sup>5</sup></a></li>
+				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
 			
 		
 			
@@ -253,19 +257,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Nginx/" title="Nginx">Nginx<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Baidu/" title="Baidu">Baidu<sup>1</sup></a></li>
 			
 		
 			
@@ -273,7 +265,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/Photo/" title="Photo">Photo<sup>1</sup></a></li>
+				<li><a href="/tags/Baidu/" title="Baidu">Baidu<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
 			
 		
 			
@@ -281,11 +277,15 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 			
 		
 			
-				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
+				<li><a href="/tags/Google/" title="Google">Google<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Google/" title="Google">Google<sup>1</sup></a></li>
+				<li><a href="/tags/Photo/" title="Photo">Photo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
 			
 		
 			
