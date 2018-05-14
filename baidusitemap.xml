@@ -4,15 +4,86 @@
 
     
   <url>
-    <loc>http://www.baicharming.com/2018/05/10/test-article/</loc>
-    <lastmod>2018-05-10T14:54:55.383Z</lastmod>
+    <loc>http://www.baicharming.com/2018/05/10/baidu-google-collection-blog/</loc>
+    <lastmod>2018-05-13T01:42:40.000Z</lastmod>
     <data>
         <display>
-        <title>test-article</title>
-        <pubTime>2018-05-10T14:54:34.000Z</pubTime>
+        <title>百度和谷歌收录博客</title>
+        <pubTime>2018-05-10T04:00:00.000Z</pubTime>
         
+        <tag>Blog</tag>
+         
+        <tag>Baidu</tag>
+         
+        <tag>Google</tag>
+         
          
            
+             
+              <breadCrumb title="研究生学习杂文" url="http://www.baicharming.com/categories/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%AD%A6%E4%B9%A0%E6%9D%82%E6%96%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2018/05/10/blog-changyan-comment/</loc>
+    <lastmod>2018-05-12T23:21:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>博客使用畅言评论</title>
+        <pubTime>2018-05-10T03:00:00.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+         
+           
+             
+              <breadCrumb title="研究生学习杂文" url="http://www.baicharming.com/categories/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%AD%A6%E4%B9%A0%E6%9D%82%E6%96%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2018/05/10/blog-cnzz-data-statistics/</loc>
+    <lastmod>2018-05-12T23:21:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>博客使用CNZZ站长统计</title>
+        <pubTime>2018-05-10T02:00:00.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>CNZZ</tag>
+         
+         
+           
+             
+              <breadCrumb title="研究生学习杂文" url="http://www.baicharming.com/categories/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%AD%A6%E4%B9%A0%E6%9D%82%E6%96%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baicharming.com/2017/07/14/errors-solutions/</loc>
+    <lastmod>2018-05-11T09:54:42.852Z</lastmod>
+    <data>
+        <display>
+        <title>后端常见错误及解决方法</title>
+        <pubTime>2017-07-14T09:55:50.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="团队经验原创博文" url="http://www.baicharming.com/categories/%E5%9B%A2%E9%98%9F%E7%BB%8F%E9%AA%8C%E5%8E%9F%E5%88%9B%E5%8D%9A%E6%96%87/"/>
+          
         </display>
     </data>
     </url>
@@ -124,28 +195,6 @@
 
     
   <url>
-    <loc>http://www.baicharming.com/2017/07/14/errors-solutions/</loc>
-    <lastmod>2017-07-15T12:54:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>后端常见错误及解决方法</title>
-        <pubTime>2017-07-14T09:55:50.000Z</pubTime>
-        
-        <tag>Errors</tag>
-         
-        <tag>Python</tag>
-         
-         
-           
-             
-              <breadCrumb title="团队经验原创博文" url="http://www.baicharming.com/categories/%E5%9B%A2%E9%98%9F%E7%BB%8F%E9%AA%8C%E5%8E%9F%E5%88%9B%E5%8D%9A%E6%96%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.baicharming.com/2017/07/13/build-nginx/</loc>
     <lastmod>2017-07-15T12:54:19.000Z</lastmod>
     <data>
@@ -195,9 +244,9 @@
         <title>如何使用 Jacman 主题</title>
         <pubTime>2017-06-19T12:55:50.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
         <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
          
         <tag>Jacman</tag>
          
@@ -259,11 +308,11 @@
         <title>使用Hexo和Github搭建个人博客</title>
         <pubTime>2017-06-24T03:40:36.000Z</pubTime>
         
+        <tag>Blog</tag>
+         
         <tag>Hexo</tag>
          
         <tag>Github</tag>
-         
-        <tag>Blog</tag>
          
          
            
