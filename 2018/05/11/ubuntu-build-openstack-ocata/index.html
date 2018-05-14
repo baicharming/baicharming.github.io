@@ -1,0 +1,606 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Ubuntu下搭建Openstack的O版 | 小白博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="baicharming">
+    
+
+    
+    <meta name="description" content="Openstack是由Rackspace和美国国家航空航天局NASA共同开发的云计算平台。该平台在开源社区拥有极高的人气，经过不断的发展和维护，得到思科、惠普、IBM等互联网巨头的大力支持，已成为最主流的开源云计算架构之一。 目前，Openstack最新发行版本是2018年3月发布的第17个版本Queens。接下来简单介绍在Ubuntu16.04下搭建Openstack的Ocata版本（也称O版）">
+<meta name="keywords" content="Ubuntu,Openstack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu下搭建Openstack的O版">
+<meta property="og:url" content="http://www.baicharming.com/2018/05/11/ubuntu-build-openstack-ocata/index.html">
+<meta property="og:site_name" content="小白博客">
+<meta property="og:description" content="Openstack是由Rackspace和美国国家航空航天局NASA共同开发的云计算平台。该平台在开源社区拥有极高的人气，经过不断的发展和维护，得到思科、惠普、IBM等互联网巨头的大力支持，已成为最主流的开源云计算架构之一。 目前，Openstack最新发行版本是2018年3月发布的第17个版本Queens。接下来简单介绍在Ubuntu16.04下搭建Openstack的Ocata版本（也称O版）">
+<meta property="og:image" content="http://www.baicharming.com/img/ubuntu-build-openstack-ocata/basic-environment-configuration.png">
+<meta property="og:image" content="http://www.baicharming.com/img/ubuntu-build-openstack-ocata/network-topology-diagram.png">
+<meta property="og:image" content="http://www.baicharming.com/img/ubuntu-build-openstack-ocata/openstack-image-list.png">
+<meta property="og:image" content="http://www.baicharming.com/img/ubuntu-build-openstack-ocata/openstack-compute-service-list.png">
+<meta property="og:image" content="http://www.baicharming.com/img/ubuntu-build-openstack-ocata/openstack-network-agent-list.png">
+<meta property="og:image" content="http://www.baicharming.com/img/ubuntu-build-openstack-ocata/horizon-verify-result.png">
+<meta property="og:updated_time" content="2018-05-11T05:46:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu下搭建Openstack的O版">
+<meta name="twitter:description" content="Openstack是由Rackspace和美国国家航空航天局NASA共同开发的云计算平台。该平台在开源社区拥有极高的人气，经过不断的发展和维护，得到思科、惠普、IBM等互联网巨头的大力支持，已成为最主流的开源云计算架构之一。 目前，Openstack最新发行版本是2018年3月发布的第17个版本Queens。接下来简单介绍在Ubuntu16.04下搭建Openstack的Ocata版本（也称O版）">
+<meta name="twitter:image" content="http://www.baicharming.com/img/ubuntu-build-openstack-ocata/basic-environment-configuration.png">
+
+    
+    
+    <link rel="icon" href="/img/bzjfavicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/bzjlogo.gif" alt="小白博客" title="小白博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="小白博客">小白博客</a></h1>
+				<h2 class="blog-motto">大家好，我是小白，欢迎您们的到来，我会持续更新博文，敬请期待！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/categories">分类</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="谷歌搜索" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/05/11/ubuntu-build-openstack-ocata/" title="Ubuntu下搭建Openstack的O版" itemprop="url">Ubuntu下搭建Openstack的O版</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="baicharming" target="_blank" itemprop="author">baicharming</a>
+		
+  <p class="article-time">
+    <time datetime="2018-05-11T09:30:50.000Z" itemprop="datePublished"> 发表于 2018-05-11</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本环境配置"><span class="toc-number">1.</span> <span class="toc-text">基本环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Keystone组件安装"><span class="toc-number">2.</span> <span class="toc-text">Keystone组件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Glance组件安装"><span class="toc-number">3.</span> <span class="toc-text">Glance组件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nova组件安装"><span class="toc-number">4.</span> <span class="toc-text">Nova组件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Neutron组件安装"><span class="toc-number">5.</span> <span class="toc-text">Neutron组件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Horizon组件安装"><span class="toc-number">6.</span> <span class="toc-text">Horizon组件安装</span></a></li></ol>
+		
+		</div>
+		
+		<p><a href="https://www.openstack.org/" target="_blank" rel="external">Openstack</a>是由Rackspace和美国国家航空航天局NASA共同开发的云计算平台。该平台在开源社区拥有极高的人气，经过不断的发展和维护，得到思科、惠普、IBM等互联网巨头的大力支持，已成为最主流的开源云计算架构之一。</p>
+<p>目前，Openstack最新发行版本是2018年3月发布的第17个版本<a href="https://docs.openstack.org/queens/install/" target="_blank" rel="external">Queens</a>。接下来简单介绍在Ubuntu16.04下搭建Openstack的Ocata版本（也称O版），本文参考官方文档：<a href="https://docs.openstack.org/ocata/install/ubuntu-services.html" target="_blank" rel="external">https://docs.openstack.org/ocata/install/ubuntu-services.html</a>。</p>
+<a id="more"></a>
+<h2 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h2><p>本文采用两台电脑分别作为Openstack控制节点和计算节点，操作系统均为<code>Ubuntu16.04-desktop-amd64</code>，控制节点上安装<code>Keystone</code>、<code>Glance</code>、<code>Nova</code>、<code>Neutron</code>和<code>Horizon</code>组件，计算节点上安装<code>nova-compute</code>和<code>neutron-linuxbridge-agent</code>。每台电脑均配置两块以太网网卡，第一块网卡设置为外部可访问的地址，第二块网卡设置为云平台各节点内部通信的地址。具体环境配置如下表所示，Openstack部署的网络拓扑如下图所示。</p>
+<p><img src="/img/ubuntu-build-openstack-ocata/basic-environment-configuration.png" alt="基本环境配置表"></p>
+<p><img src="/img/ubuntu-build-openstack-ocata/network-topology-diagram.png" alt="Openstack部署网络拓扑图"></p>
+<p>在安装Openstack组件之前，首先验证控制节点和计算节点之间的连通性，以及各自节点与外网的连通性；然后安装网络时间同步协议<code>NTP（Network Time Protocol）</code>，保证两个节点的时间是同步的；其次安装<code>MariaDB</code>数据库和<code>RabbitMQ</code>消息队列，用于存储数据和协调服务之间的操作；最后安装<code>Openstack Ocata</code>包，在Ubuntu系统下安装Ocata包的命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># apt install software-properties-common</div><div class="line"># add-apt-repository cloud-archive:ocata</div><div class="line"># apt update &amp;&amp; apt dist-upgrade</div><div class="line"># apt install python-openstackclient</div></pre></td></tr></table></figure></p>
+<h2 id="Keystone组件安装"><a href="#Keystone组件安装" class="headerlink" title="Keystone组件安装"></a>Keystone组件安装</h2><p>Keystone为Openstack提供认证、授权、用户管理和角色管理等服务。首先需要在MariaDB中创建keystone数据库并授予适当的权限。然后通过apt方式安装keystone包，安装成功后修改<code>/etc/keystone/keystone.conf</code>文件中的<code>[database]</code>部分，将<code>KEYSTONE_DBPASS</code>修改成keystone数据库密码。其次是创建domain、projects、users以及roles，其命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ openstack project create --domain default --description &quot;Service Project&quot; service</div><div class="line">$ openstack project create --domain default --description &quot;Demo Project&quot; demo</div><div class="line">$ openstack user create --domain default --password-prompt demo</div><div class="line">$ openstack role create user</div><div class="line">$ openstack role add --project demo --user demo user</div></pre></td></tr></table></figure></p>
+<p>最后是创建Openstack客户端环境的两个脚本，在后面的操作中会经常用到这些脚本。其中一个是管理员操作脚本，命名为<code>admin-openrc</code>，另一个是demo用户操作脚本，命名为<code>demo-openrc</code>。使用脚本的方法为：<code>$ . admin-openrc</code>或者<code>$ . demo-openrc</code>。</p>
+<h2 id="Glance组件安装"><a href="#Glance组件安装" class="headerlink" title="Glance组件安装"></a>Glance组件安装</h2><p>Glance是Openstack用于管理虚拟机镜像的工程，实现包括镜像的上传、验证、删除等管理。首先是创建glance数据库并授予适当的权限。然后创建Glance用户和镜像服务API端点，其命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ . admin-openrc</div><div class="line">$ openstack user create --domain default --password-prompt glance</div><div class="line">$ openstack role add --project service --user glance admin</div><div class="line">$ openstack service create --name glance --description &quot;OpenStack Image&quot; image</div><div class="line">$ openstack endpoint create --region RegionOne image public http://controller:9292</div><div class="line">$ openstack endpoint create --region RegionOne image internal http://controller:9292</div><div class="line">$ openstack endpoint create --region RegionOne image admin http://controller:9292</div></pre></td></tr></table></figure></p>
+<p>其次是通过apt方式安装glance包，并配置<code>/etc/glance/glance-api.conf</code>文件和<code>/etc/glance/glance-registry.conf</code>文件。最后是在网上下载cirros镜像并将此镜像上传至Openstack，上传成功后，通过命令<code>openstack image list</code>就能看到刚才上传的镜像，本文成功上传cirros镜像，如下图所示。</p>
+<p><img src="/img/ubuntu-build-openstack-ocata/openstack-image-list.png" alt="查看镜像上传结果"></p>
+<h2 id="Nova组件安装"><a href="#Nova组件安装" class="headerlink" title="Nova组件安装"></a>Nova组件安装</h2><p>Nova为Openstack服务项目工程，可提供包括虚拟机实例、网络、云硬盘（Volume）等的管理。Nova组件既要在控制节点上安装也要在计算节点上安装并配置。</p>
+<ul>
+<li><p><strong>Nova在控制节点上的安装配置</strong><br>首先是创建<code>nova_api</code>、<code>nova</code>以及<code>nova_cell0</code>数据库，并对其授予合适的权限。然后创建Nova用户和计算服务API端点，同时还有创建Placement用户和Placement API端点，其命令形如Glance的安装。其次是安装Nova相关包：<code>nova-api</code>、<code>nova-conductor</code>、<code>nova-consoleauth</code>、<code>nova-novncproxy</code>、<code>nova-scheduler</code>和<code>nova-placement-api</code>。最后重启计算服务，其命令为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># service nova-api restart</div><div class="line"># service nova-consoleauth restart</div><div class="line"># service nova-scheduler restart</div><div class="line"># service nova-conductor restart</div><div class="line"># service nova-novncproxy restart</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Nova在计算节点上的安装配置</strong><br>步骤很简单，首先通过apt方式安装<code>nova-compute</code>，然后配置<code>/etc/nova/nova.conf</code>文件，最后重启<code>nova-compute</code>服务即可。</p>
+</li>
+</ul>
+<p>本文通过两个节点的配置后，在控制节点上显示计算服务列表如下图所示，由图可知在控制节点上启用三个服务组件和计算节点上启用一个服务组件。</p>
+<p><img src="/img/ubuntu-build-openstack-ocata/openstack-compute-service-list.png" alt="控制节点上显示计算服务列表"></p>
+<h2 id="Neutron组件安装"><a href="#Neutron组件安装" class="headerlink" title="Neutron组件安装"></a>Neutron组件安装</h2><p>Neutron提供云计算的网络虚拟化技术，为OpenStack其他服务提供网络连接服务。首先创建neutron数据库并授予其权限。然后创建Neutron用户和网络服务API端点，其命令形如Glance的安装。后续的Neutron网络组件既要在控制节点上安装也要在计算节点上安装并配置。</p>
+<ul>
+<li><p><strong>Neutron在控制节点上的安装配置</strong><br>通过apt方式安装<code>neutron-server</code>、 <code>neutron-plugin-ml2</code>、<code>neutron-linuxbridge-agent</code>、<code>neutron-l3-agent</code>、<code>neutron-dhcp-agent</code>和<code>neutron-metadata-agent</code>网络组件，并分别配置各组件，值得注意的是在配置<code>linux bridge agent</code>时，<code>/etc/neutron/plugins/ml2/linuxbridge_agent.ini</code>文件中<code>[linux_bridge]</code>部分提到的<code>PROVIDER_INTERFACE_NAME</code>应该是外网的网卡接口，该处本文的配置为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[linux_bridge]</div><div class="line">physical_interface_mappings = provider:enp2s0</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Neutron在计算节点上的安装配置</strong><br>通过apt方式安装<code>neutron-linuxbridge-agent</code>网络组件，该组件的配置与控制节点上的配置一样，本文的<code>PROVIDER_INTERFACE_NAME</code>应替换为enp3s0。</p>
+</li>
+</ul>
+<p>两个节点的配置完成之后，重启Neutron和Nova的各种服务，然后查看网络代理的列表，本文查看结果如下图所示，由图可知，在控制节点上有四个网络代理，在计算节点上有一个网络代理。</p>
+<p><img src="/img/ubuntu-build-openstack-ocata/openstack-network-agent-list.png" alt="查看网络代理列表结果"></p>
+<h2 id="Horizon组件安装"><a href="#Horizon组件安装" class="headerlink" title="Horizon组件安装"></a>Horizon组件安装</h2><p>Horizon提供Web形式的管理界面，其安装配置比较简单。首先通过apt安装<code>openstack-dashboard</code>组件，安装之后对<code>/etc/openstack-dashboard/local_settings.py</code>文件进行配置，主要配置内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">OPENSTACK_HOST = &quot;controller&quot;  #配置Dashboard使用 OpenStack 服务</div><div class="line">ALLOWED_HOSTS = [&apos;*&apos;]  #允许所有主机访问Dashboard</div><div class="line">#以下两行是配置 memcached 会话存储服务</div><div class="line">SESSION_ENGINE = &apos;django.contrib.sessions.backends.cache&apos;</div><div class="line">CACHES = &#123; &apos;default&apos;: &#123; &apos;BACKEND&apos;: &apos;django.core.cache.backends.memcached.MemcachedCache&apos;, &apos;LOCATION&apos;: &apos;controller:11211&apos;&#125;&#125;</div><div class="line">OPENSTACK_KEYSTONE_URL = &quot;http://%s:5000/v3&quot; % OPENSTACK_HOST  #启用第3版Identify API</div><div class="line">OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = True  #启用对域的支持</div></pre></td></tr></table></figure></p>
+<p>然后更改 Dashboard密钥文件权限，以及重启Apache2网络服务，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># chown www-data:www-data /var/lib/openstack-dashboard/secret_key</div><div class="line"># service apache2 reload</div></pre></td></tr></table></figure></p>
+<p>最后通过浏览器访问<code>http://controller/horizon</code>地址进行验证，本文的验证结果如下图所示，admin用户和demo用户都能正常登陆。</p>
+<p><img src="/img/ubuntu-build-openstack-ocata/horizon-verify-result.png" alt="Horizon组件验证结果"></p>
+<p>至此，Openstack基本组件已搭建完成，内容写得较粗糙，详细步骤请参考官方文档：<a href="https://docs.openstack.org/ocata/install/ubuntu-services.html" target="_blank" rel="external">https://docs.openstack.org/ocata/install/ubuntu-services.html</a>。</p>
+<p>下一篇博文将介绍Openstack云平台上启动Ubuntu实例：<a href="http://www.baicharming.com/2018/05/11/openstack-launch-ubuntu-instance/">http://www.baicharming.com/2018/05/11/openstack-launch-ubuntu-instance/</a>。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/研究生学习杂文/">研究生学习杂文</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/Openstack/">Openstack</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://www.baicharming.com/2018/05/11/ubuntu-build-openstack-ocata/" data-title="Ubuntu下搭建Openstack的O版 | 小白博客" data-tsina="2771721881" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/05/11/openstack-launch-ubuntu-instance/" title="Openstack云平台启动Ubuntu实例">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Openstack云平台启动Ubuntu实例</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/05/10/baidu-google-collection-blog/"  title="百度和谷歌收录博客">
+ <strong>下一篇：</strong><br/> 
+ <span>百度和谷歌收录博客
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments">  <div id="SOHUCS" sid="Ubuntu下搭建Openstack的O版"></div> <script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt4r5urz'; 
+var conf = 'prod_d4c78aa306c5f0779d60e2fbe3627e81'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+ </section> 
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本环境配置"><span class="toc-number">1.</span> <span class="toc-text">基本环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Keystone组件安装"><span class="toc-number">2.</span> <span class="toc-text">Keystone组件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Glance组件安装"><span class="toc-number">3.</span> <span class="toc-text">Glance组件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nova组件安装"><span class="toc-number">4.</span> <span class="toc-text">Nova组件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Neutron组件安装"><span class="toc-number">5.</span> <span class="toc-text">Neutron组件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Horizon组件安装"><span class="toc-number">6.</span> <span class="toc-text">Horizon组件安装</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="baicharming" data-theme="medium"></div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/团队经验原创博文/" title="团队经验原创博文">团队经验原创博文<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/研究生学习杂文/" title="研究生学习杂文">研究生学习杂文<sup>10</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Ubuntu/" title="Ubuntu">Ubuntu<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Blog/" title="Blog">Blog<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Openstack/" title="Openstack">Openstack<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Github/" title="Github">Github<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Nginx/" title="Nginx">Nginx<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Baidu/" title="Baidu">Baidu<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Photo/" title="Photo">Photo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CNZZ/" title="CNZZ">CNZZ<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Jacman/" title="Jacman">Jacman<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/MySQL/" title="MySQL">MySQL<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Google/" title="Google">Google<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/KVM/" title="KVM">KVM<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://weibo.com/2771721881" target="_blank" title="小白的微博">小白的微博</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://github.com/baicharming" target="_blank" title="小白的Github">小白的Github</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2771721881&verifier=163a7e28&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m baicharming. <br/>
+			Welcome to my blog!</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2771721881" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/baicharming" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="baicharming">baicharming</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1262408921'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1262408921%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1262408921'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1262408921%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  </body>
+</html>

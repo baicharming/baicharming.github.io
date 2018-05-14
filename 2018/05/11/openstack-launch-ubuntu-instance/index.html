@@ -4,24 +4,30 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>认识Markdown | 小白博客</title>
+    <title>Openstack云平台启动Ubuntu实例 | 小白博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="baicharming">
     
 
     
-    <meta name="description" content="Markdown简介Markdown 是一种轻量级的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。">
-<meta name="keywords" content="Markdown">
+    <meta name="description" content="上一篇博文已介绍在Ubuntu16.04系统下搭建Openstack的Ocata版本。在Openstack搭建完成后，可以在Openstack云平台上启动实例，本文以启动Ubuntu实例展开说明，主要分为四个步骤：第一是创建虚拟网络；第二是创建Ubuntu镜像和flavor云主机类型；第三是生成秘钥对和增加安全组规则；第四是在Provider网络上启动Ubuntu实例。">
+<meta name="keywords" content="Ubuntu,Openstack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="认识Markdown">
-<meta property="og:url" content="http://www.baicharming.com/2017/06/23/what-is-markdown/index.html">
+<meta property="og:title" content="Openstack云平台启动Ubuntu实例">
+<meta property="og:url" content="http://www.baicharming.com/2018/05/11/openstack-launch-ubuntu-instance/index.html">
 <meta property="og:site_name" content="小白博客">
-<meta property="og:description" content="Markdown简介Markdown 是一种轻量级的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。">
-<meta property="og:updated_time" content="2017-07-15T12:48:05.000Z">
+<meta property="og:description" content="上一篇博文已介绍在Ubuntu16.04系统下搭建Openstack的Ocata版本。在Openstack搭建完成后，可以在Openstack云平台上启动实例，本文以启动Ubuntu实例展开说明，主要分为四个步骤：第一是创建虚拟网络；第二是创建Ubuntu镜像和flavor云主机类型；第三是生成秘钥对和增加安全组规则；第四是在Provider网络上启动Ubuntu实例。">
+<meta property="og:image" content="http://www.baicharming.com/img/openstack-launch-ubuntu-instance/neutron-router-port-list-router.png">
+<meta property="og:image" content="http://www.baicharming.com/img/openstack-launch-ubuntu-instance/create-image.png">
+<meta property="og:image" content="http://www.baicharming.com/img/openstack-launch-ubuntu-instance/show-image-list.png">
+<meta property="og:image" content="http://www.baicharming.com/img/openstack-launch-ubuntu-instance/show-ubuntu-instance.png">
+<meta property="og:image" content="http://www.baicharming.com/img/openstack-launch-ubuntu-instance/ssh-login-ubuntu.png">
+<meta property="og:updated_time" content="2018-05-11T05:25:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="认识Markdown">
-<meta name="twitter:description" content="Markdown简介Markdown 是一种轻量级的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。">
+<meta name="twitter:title" content="Openstack云平台启动Ubuntu实例">
+<meta name="twitter:description" content="上一篇博文已介绍在Ubuntu16.04系统下搭建Openstack的Ocata版本。在Openstack搭建完成后，可以在Openstack云平台上启动实例，本文以启动Ubuntu实例展开说明，主要分为四个步骤：第一是创建虚拟网络；第二是创建Ubuntu镜像和flavor云主机类型；第三是生成秘钥对和增加安全组规则；第四是在Provider网络上启动Ubuntu实例。">
+<meta name="twitter:image" content="http://www.baicharming.com/img/openstack-launch-ubuntu-instance/neutron-router-port-list-router.png">
 
     
     
@@ -82,14 +88,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/06/23/what-is-markdown/" title="认识Markdown" itemprop="url">认识Markdown</a>
+      <a href="/2018/05/11/openstack-launch-ubuntu-instance/" title="Openstack云平台启动Ubuntu实例" itemprop="url">Openstack云平台启动Ubuntu实例</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="baicharming" target="_blank" itemprop="author">baicharming</a>
 		
   <p class="article-time">
-    <time datetime="2017-06-23T13:40:36.000Z" itemprop="datePublished"> 发表于 2017-06-23</time>
+    <time datetime="2018-05-11T13:30:50.000Z" itemprop="datePublished"> 发表于 2018-05-11</time>
     
   </p>
 </header>
@@ -98,29 +104,28 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown简介"><span class="toc-number">1.</span> <span class="toc-text">Markdown简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown优点"><span class="toc-number">2.</span> <span class="toc-text">Markdown优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown编辑器"><span class="toc-number">3.</span> <span class="toc-text">Markdown编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown基本语法"><span class="toc-number">4.</span> <span class="toc-text">Markdown基本语法</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建虚拟网络"><span class="toc-number">1.</span> <span class="toc-text">创建虚拟网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建Ubuntu镜像和flavor云主机类型"><span class="toc-number">2.</span> <span class="toc-text">创建Ubuntu镜像和flavor云主机类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成秘钥对和增加安全组规则"><span class="toc-number">3.</span> <span class="toc-text">生成秘钥对和增加安全组规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在Provider网络上启动Ubuntu实例"><span class="toc-number">4.</span> <span class="toc-text">在Provider网络上启动Ubuntu实例</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="Markdown简介"><a href="#Markdown简介" class="headerlink" title="Markdown简介"></a>Markdown简介</h2><p>Markdown 是一种轻量级的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台<a href="https://wordpress.org" target="_blank" rel="external">WordPress</a>和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。</p>
+		<p>上一篇博文已介绍<a href="http://www.baicharming.com/2018/05/11/ubuntu-build-openstack-ocata/">在Ubuntu16.04系统下搭建Openstack的Ocata版本</a>。在Openstack搭建完成后，可以在Openstack云平台上启动实例，本文以启动Ubuntu实例展开说明，主要分为四个步骤：第一是创建虚拟网络；第二是创建Ubuntu镜像和flavor云主机类型；第三是生成秘钥对和增加安全组规则；第四是在Provider网络上启动Ubuntu实例。</p>
 <a id="more"></a>
-<h2 id="Markdown优点"><a href="#Markdown优点" class="headerlink" title="Markdown优点"></a>Markdown优点</h2><ul>
-<li>专注你的文字内容而不是排版样式，安心写作。</li>
-<li>轻松的导出 HTML、PDF 和本身的 .md 文件。</li>
-<li>纯文本内容，兼容所有的文本编辑器与字处理软件。</li>
-<li>随时修改你的文章版本，不必像字处理软件生成若干文件版本导致混乱。</li>
-<li>可读、直观、学习成本低。</li>
-</ul>
-<p>参考：<a href="http://www.jianshu.com/p/1e402922ee32/" target="_blank" rel="external">Markdown入门指南</a></p>
-<h2 id="Markdown编辑器"><a href="#Markdown编辑器" class="headerlink" title="Markdown编辑器"></a>Markdown编辑器</h2><ul>
-<li>Mac OS X：Mou、VSCode、Atom、Byword、Typora、MacDown、RStudio</li>
-<li>Linux：VSCode、Atom、ReText、UberWriter、RStudio</li>
-<li>Windows：VSCode、Atom、MarkdownPad、Miu、Typora、RStudio</li>
-<li>IOS：Byword</li>
-<li>Browser plug-in：MaDo (Chrome)、Marxico（Chrome）</li>
-</ul>
-<p>参考：<a href="http://baike.baidu.com/item/markdown" target="_blank" rel="external">Markdown百度百科</a></p>
-<h2 id="Markdown基本语法"><a href="#Markdown基本语法" class="headerlink" title="Markdown基本语法"></a>Markdown基本语法</h2><p>请阅读我的另一篇文章-<a href="http://www.baicharming.com/2017/06/23/markdown-grammar/">Markdown基本语法</a></p>
+<h2 id="创建虚拟网络"><a href="#创建虚拟网络" class="headerlink" title="创建虚拟网络"></a>创建虚拟网络</h2><p>首先，创建Provider网络和子网，其命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ . admin-openrc</div><div class="line">$ openstack network create  --share --external --provider-physical-network provider --provider-network-type flat provider</div><div class="line">$ openstack subnet create --network provider --allocation-pool start=192.168.1.150,end=192.168.1.190 --dns-nameserver 114.114.114.114 --gateway 192.168.1.1 --subnet-range 192.168.1.0/24 provider</div></pre></td></tr></table></figure></p>
+<p>然后，创建Self-service网络和子网，其命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ . demo-openrc</div><div class="line">$ openstack network create selfservice</div><div class="line">$ openstack subnet create --network selfservice --dns-nameserver 114.114.114.114 --gateway 172.16.1.1 --subnet-range 172.16.1.0/24 selfservice</div></pre></td></tr></table></figure></p>
+<p>其次，创建一个路由，用于Provider网络和Self-service网络之间的连接。</p>
+<p>最后是验证操作，列出路由上的端口，查看Provider网络上的网关IP地址，本文的网关IP地址为<code>192.168.1.156</code>，并从控制节点主机Ping该IP地址，本文验证结果如下图所示。</p>
+<p><img src="/img/openstack-launch-ubuntu-instance/neutron-router-port-list-router.png" alt="创建虚拟网络验证结果"></p>
+<h2 id="创建Ubuntu镜像和flavor云主机类型"><a href="#创建Ubuntu镜像和flavor云主机类型" class="headerlink" title="创建Ubuntu镜像和flavor云主机类型"></a>创建Ubuntu镜像和flavor云主机类型</h2><p>首先，通过网址<code>http://uec-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img</code>下载Ubuntu镜像。</p>
+<p>然后，登录Dashboard创建镜像，其镜像文件选择刚才下载的Ubuntu镜像，镜像名称命名为ubuntu，镜像格式一般选择<code>QCOW2-QEMU Emulator</code>，如下图1所示。点击创建按钮等待镜像上传，上传成功后在页面显示已创建的所有镜像，如下图2所示，Ubuntu镜像已创建成功，状态为Active。</p>
+<p>最后，创建flavor云主机类型，确定云主机的内存大小、CPU数量等参数。</p>
+<p><img src="/img/openstack-launch-ubuntu-instance/create-image.png" alt="图1：创建镜像页面"></p>
+<p><img src="/img/openstack-launch-ubuntu-instance/show-image-list.png" alt="图2：显示已创建的镜像"></p>
+<h2 id="生成秘钥对和增加安全组规则"><a href="#生成秘钥对和增加安全组规则" class="headerlink" title="生成秘钥对和增加安全组规则"></a>生成秘钥对和增加安全组规则</h2><p>通过以下命令生成秘钥对，名称为mykey。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ . demo-openrc</div><div class="line">$ ssh-keygen -q -N &quot;&quot;</div><div class="line">$ openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey</div></pre></td></tr></table></figure></p>
+<p>通过以下命令增加安全组规则，允许通过ICMP协议（用于Ping命令）和SSH协议（用于远程登录）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ openstack security group rule create --proto icmp default</div><div class="line">$ openstack security group rule create --proto tcp --dst-port 22 default</div></pre></td></tr></table></figure></p>
+<h2 id="在Provider网络上启动Ubuntu实例"><a href="#在Provider网络上启动Ubuntu实例" class="headerlink" title="在Provider网络上启动Ubuntu实例"></a>在Provider网络上启动Ubuntu实例</h2><p>在上述操作完成后，可以通过以下命令启动Ubuntu实例，实例名称为<code>ubuntu-1</code>。创建成功后ubuntu云主机会自动获取一个Provider外网地址，本文ubuntu云主机的IP地址为<code>192.168.1.159</code>，如下图所示，实例状态为Active，表示实例启动成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ openstack server create --flavor flavor-ubuntu-1 --image ubuntu --nic net-id=2c304276-ca13-4ff8-b1da-1d0a40ac8a1f --security-group default --key-name mykey ubuntu-1</div></pre></td></tr></table></figure></p>
+<p><img src="/img/openstack-launch-ubuntu-instance/show-ubuntu-instance.png" alt="显示Ubuntu实例"></p>
+<p>至此，Ubuntu实例已创建成功，可以通过SSH远程登录ubuntu云主机，本文的远程登录情况如下图所示。</p>
+<p><img src="/img/openstack-launch-ubuntu-instance/ssh-login-ubuntu.png" alt="ssh远程登录ubuntu云主机"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -134,7 +139,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Markdown/">Markdown</a>
+  <span></span> <a href="/tags/Ubuntu/">Ubuntu</a><a href="/tags/Openstack/">Openstack</a>
   </div>
 
 </div>
@@ -143,7 +148,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.baicharming.com/2017/06/23/what-is-markdown/" data-title="认识Markdown | 小白博客" data-tsina="2771721881" class="share clearfix">
+	  <div data-url="http://www.baicharming.com/2018/05/11/openstack-launch-ubuntu-instance/" data-title="Openstack云平台启动Ubuntu实例 | 小白博客" data-tsina="2771721881" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -157,19 +162,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/06/24/build-blog-with-hexo-github/" title="使用Hexo和Github搭建个人博客">
-  <strong>上一篇：</strong><br/>
-  <span>
-  使用Hexo和Github搭建个人博客</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/06/23/markdown-grammar/"  title="Markdown基本语法">
+<a href="/2018/05/11/ubuntu-build-openstack-ocata/"  title="Ubuntu下搭建Openstack的O版">
  <strong>下一篇：</strong><br/> 
- <span>Markdown基本语法
+ <span>Ubuntu下搭建Openstack的O版
 </span>
 </a>
 </div>
@@ -177,7 +174,7 @@
 </nav>
 
 	
-<section id="comments">  <div id="SOHUCS" sid="认识Markdown"></div> <script type="text/javascript"> 
+<section id="comments">  <div id="SOHUCS" sid="Openstack云平台启动Ubuntu实例"></div> <script type="text/javascript"> 
 (function(){ 
 var appid = 'cyt4r5urz'; 
 var conf = 'prod_d4c78aa306c5f0779d60e2fbe3627e81'; 
@@ -194,7 +191,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown简介"><span class="toc-number">1.</span> <span class="toc-text">Markdown简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown优点"><span class="toc-number">2.</span> <span class="toc-text">Markdown优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown编辑器"><span class="toc-number">3.</span> <span class="toc-text">Markdown编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown基本语法"><span class="toc-number">4.</span> <span class="toc-text">Markdown基本语法</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建虚拟网络"><span class="toc-number">1.</span> <span class="toc-text">创建虚拟网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建Ubuntu镜像和flavor云主机类型"><span class="toc-number">2.</span> <span class="toc-text">创建Ubuntu镜像和flavor云主机类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成秘钥对和增加安全组规则"><span class="toc-number">3.</span> <span class="toc-text">生成秘钥对和增加安全组规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在Provider网络上启动Ubuntu实例"><span class="toc-number">4.</span> <span class="toc-text">在Provider网络上启动Ubuntu实例</span></a></li></ol>
  
   </div>
 
